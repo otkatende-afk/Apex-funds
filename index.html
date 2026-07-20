@@ -765,6 +765,141 @@ font-weight:bold;
 
 </style>
 
+<!-- MARKET TICKER -->
+
+<div class="ticker">
+
+<div class="ticker-track">
+
+<span>NASDAQ +1.24%</span>
+<span>XAUUSD $3425.60</span>
+<span>EURUSD 1.1745</span>
+<span>GBPJPY 201.30</span>
+<span>CADJPY 112.80</span>
+<span>US OIL $72.40</span>
+<span>EURGBP 0.8650</span>
+
+</div>
+
+</div>
+
+
+
+<!-- PAYOUT NOTIFICATION -->
+
+<div class="payout">
+
+<div class="dot"></div>
+
+Trader Michael received a $2,450 payout 🎉
+
+</div>
+
+
+<style>
+
+
+.ticker{
+
+background:#0d0d0d;
+border-top:1px solid #222;
+border-bottom:1px solid #222;
+overflow:hidden;
+padding:15px 0;
+
+}
+
+.ticker-track{
+
+display:flex;
+gap:50px;
+white-space:nowrap;
+animation:move 18s linear infinite;
+
+}
+
+
+
+.ticker span{
+
+color:#00ff88;
+font-weight:bold;
+
+
+}
+
+
+
+@keyframes move{
+
+from{
+transform:translateX(100%);
+}
+
+to{
+transform:translateX(-100%);
+}
+
+}
+
+
+
+
+
+.payout{
+
+position:fixed;
+bottom:25px;
+left:25px;
+
+background:#111;
+border:1px solid #00ff88;
+
+padding:15px 25px;
+border-radius:30px;
+
+display:flex;
+align-items:center;
+gap:10px;
+
+font-size:14px;
+
+animation:popup 4s infinite;
+
+}
+
+
+
+.dot{
+
+width:10px;
+height:10px;
+
+background:#00ff88;
+border-radius:50%;
+
+}
+
+
+
+@keyframes popup{
+
+0%,100%{
+opacity:0;
+transform:translateY(30px);
+}
+
+20%,80%{
+opacity:1;
+
+transform:translateY(0);
+}
+
+}
+
+
+</style>
+
 
 
 </body>
