@@ -555,3 +555,48 @@ border-radius:20px;
 text-align:center;
 
 }
+
+.stats-section{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin:60px auto;
+
+}
+
+.stat-box{
+
+width:220px;
+background:#111;
+border:1px solid #222;
+border-radius:18px;
+
+padding:30px;
+text-align:center;
+transition:.3s;
+
+}
+
+.stat-box:hover{
+
+transform:translateY(-8px);
+border-color:#d4af37;
+
+}
+
+.stat-box h2{
+
+font-size:38px;
+
+color:#00ff88;
+margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+color:#bbb;
+
+}
