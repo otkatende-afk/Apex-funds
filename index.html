@@ -1,218 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apex Capital | Become a Funded Trader</title>
+<title>Apex Capital | Become Funded</title>
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#050505;
-    color:white;
-}
-
-
-/* NAVBAR */
-
-nav{
-    width:100%;
-    padding:20px 8%;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#090909;
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#d4af37;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    font-size:15px;
-}
-
-.nav-links a:hover{
-    color:#d4af37;
-}
-
-
-
-/* HERO */
-
-.hero{
-
-
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:50px 8%;
-    background:
-    radial-gradient(circle at top,#1c1600,#050505 50%);
-
-}
-
-
-.hero h1{
-
-    font-size:65px;
-    max-width:900px;
-    line-height:1.1;
-
-}
-
-
-.gold{
-    color:#d4af37;
-}
-
-
-.hero p{
-
-    margin-top:25px;
-    font-size:20px;
-
-    color:#bbbbbb;
-    max-width:700px;
-
-}
-
-
-.buttons{
-
-    margin-top:40px;
-
-}
-
-
-.btn{
-
-    display:inline-block;
-
-    padding:15px 35px;
-    margin:10px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-
-}
-
-
-.primary{
-
-    background:#d4af37;
-    color:black;
-
-}
-
-
-
-.secondary{
-
-    border:2px solid #d4af37;
-    color:#d4af37;
-
-}
-
-
-.btn:hover{
-
-    transform:scale(1.08);
-
-}
-
-
-
-/* PROFIT BOX */
-
-.stats{
-
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    margin-top:60px;
-    flex-wrap:wrap;
-
-}
-
-
-.stat{
-
-
-    background:#111;
-    padding:25px 40px;
-    border-radius:15px;
-    border:1px solid #222;
-
-}
-
-
-.stat h2{
-
-    color:#00ff88;
-    font-size:35px;
-
-}
-
-
-.stat p{
-
-    font-size:14px;
-
-}
-
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-.hero h1{
-
-font-size:40px;
-
-
-}
-
-nav{
-
-padding:20px;
-
-}
-
-.nav-links{
-
-display:none;
-
-}
-
-}
-
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -220,61 +17,76 @@ display:none;
 <body>
 
 
+<!-- NAVIGATION -->
+
 <nav>
 
 <div class="logo">
-APEX CAPITAL
+APEX <span>CAPITAL</span>
 </div>
 
 
-<div class="nav-links">
+<div class="menu-btn" 
+
+onclick="toggleMenu()">
+☰
+</div>
+
+
+<div class="nav-links" id="navMenu">
 
 <a href="#">Home</a>
-<a href="#">Challenges</a>
-<a href="#">Rules</a>
+<a href="#challenges">Challenges</a>
+<a href="#rules">Rules</a>
 <a href="login.html">Login</a>
-<a href="register.html">Register</a>
+<a href="register.html">Register</
+
+a>
+
 </div>
+
 
 </nav>
 
 
 
+<!-- HERO SECTION -->
+
+
 <section class="hero">
 
 
-<div>
+<div class="hero-content">
+
 
 
 <h1>
 Pass The Challenge.
 <br>
-Get <span class="gold">Funded.</span>
+Become <span>Funded.</span>
 </h1>
 
 
 <p>
 Trade your strategy, prove your discipline,
-and earn a funded account 
+and get access to professional capital with
+up to <strong>95% profit share.</strong>
 
-with up to
-<strong>95% profit share.</strong>
 </p>
 
 
 
-<div class="buttons">
+<div class="hero-buttons">
 
-<a class="btn primary" href="#">
+<a href="#challenges" class="btn primary">
 Get Started
 </a>
 
 
-<a class="btn secondary" 
-
-href="#">
+<a href="#" class="btn secondary">
 Free Trial
 </a>
+
 
 </div>
 
@@ -283,34 +95,27 @@ Free Trial
 <div class="stats">
 
 
-<div class="stat">
-
+<div>
 <h2>95%</h2>
-<p>Profit Share</p>
-
+<p>Profit Split</p>
 </div>
 
 
+<div>
+<h2>$200K</h2>
 
-<div class="stat">
-
-<h2>$100K</h2>
 <p>Maximum Funding</p>
-
 </div>
 
 
-
-<div class="stat">
-
+<div>
 <h2>24/7</h2>
-
 <p>Trader Support</p>
-
 </div>
 
 
 </div>
+
 
 
 </div>
@@ -318,466 +123,23 @@ Free Trial
 
 </section>
 
-<!-- CHALLENGE SECTION -->
 
-<section class="challenges">
 
-<h2>Choose Your Challenge</h2>
-
-<p class="subtitle">
-Find the account size and challenge that fits your trading style.
-</p>
-
-
-<div class="challenge-container">
-
-
-<div class="challenge-card">
-
-<h3>Two Phase Challenge</h3>
-
-<div class="price">
-$5K - $100K
-</div>
-
-
-<ul>
-
-<li>✓ Highest value two-phase model</li>
-<li>✓ Get your fee back with first reward</li>
-
-<li>✓ For consistent, disciplined traders</li>
-<li>✓ Up to 95% profit split</li>
-
-</ul>
-
-
-<button>
-Start Challenge
-</button>
-
-
-</div>
-
-
-
-<div class="challenge-card featured">
-
-<h3>Single Phase Challenge</h3>
-
-<div class="price">
-$5K - $100K
-</div>
-
-
-<ul>
-
-<li>✓ Fastest path to Apex 
-
-Funded Account</li>
-<li>✓ Get your first reward within 5 days</li>
-<li>✓ For traders who want a faster route</li>
-<li>✓ Simple evaluation process</li>
-
-</ul>
-
-
-<button>
-Start Challenge
-</button>
-
-</div>
-
-
-
-
-
-<div class="help-card">
-
-
-<h3>
-Not sure which one?
-</h3>
-
-
-<p>
-Let Apex AI help you choose the 
-
-perfect challenge.
-</p>
-
-
-<button>
-Help Me Choose
-</button>
-
-
-</div>
-
-
-
-</div>
-
-</section>
-
-
-
-
-<style>
-
-
-.challenges{
-
-padding:80px 8%;
-text-align:center;
-background:#080808;
-
-}
-
-
-.challenges h2{
-
-
-font-size:45px;
-color:#d4af37;
-
-}
-
-
-.subtitle{
-
-color:#aaa;
-margin:15px;
-
-}
-
-.challenge-container{
-
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-margin-top:50px;
-
-}
-
-
-
-.challenge-card,
-.help-card{
-
-background:#111;
-
-border:1px solid #292929;
-border-radius:20px;
-padding:35px;
-width:330px;
-transition:.3s;
-
-}
-
-
-.challenge-card:hover,
-.help-card:hover{
-
-transform:translateY(-10px);
-border-color:#d4af37;
-
-}
-
-
-
-
-.challenge-card h3,
-.help-card h3{
-
-font-size:25px;
-margin-bottom:20px;
-
-}
-
-
-
-.price{
-
-font-size:30px;
-
-color:#00ff88;
-font-weight:bold;
-margin-bottom:20px;
-
-}
-
-
-.challenge-card ul{
-
-list-style:none;
-text-align:left;
-line-height:2;
-
-}
-
-
-.challenge-card button,
-.help-card button{
-
-margin-top:25px;
-padding:14px 30px;
-border:none;
-border-radius:30px;
-background:#d4af37;
-font-weight:bold;
-cursor:pointer;
-
-}
-
-.featured{
-
-box-shadow:0 0 25px rgba(212,175,55,0.3);
-
-}
-
-
-.help-card{
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-
-}
-
-
-</style>
-
-<!-- FUNDED ACCOUNTS SECTION -->
-
-<section class="funded">
-
-<h2>Choose Your Funded Account</h2>
-
-<p class="subtitle">
-Scale your trading with professional capital.
-</p>
-
-
-<div class="accounts">
-
-
-<div class="account-card">
-
-<h3>$5K Account</h3>
-
-<h4>$49 Challenge Fee</h4>
-
-<ul>
-<li>✓ Profit Target: 10%</li>
-<li>✓ Daily Loss: 5%</li>
-<li>✓ Maximum Drawdown: 10%</li>
-<li>✓ Profit Split: 95%</li>
-</ul>
-
-<button>Start Challenge</
-
-button>
-
-</div>
-
-
-
-
-<div class="account-card popular">
-
-<div class="badge">
-MOST POPULAR
-</div>
-
-
-<h3>$10K Account</h3>
-
-
-<h4>$89 Challenge Fee</h4>
-
-<ul>
-<li>✓ Profit Target: 10%</li>
-<li>✓ Daily Loss: 5%</li>
-<li>✓ Maximum Drawdown: 10%</li>
-<li>✓ Profit Split: 95%</li>
-</ul>
-
-<button>Start Challenge</button>
-
-</div>
-
-
-
-
-<div class="account-card">
-
-<h3>$100K Account</h3>
-
-<h4>$499 Challenge Fee</h4>
-
-<ul>
-<li>✓ Profit Target: 8%</li>
-<li>✓ Daily Loss: 5%</li>
-<li>✓ Maximum Drawdown: 10%</li>
-<li>✓ Profit Split: 95%</li>
-</ul>
-
-
-<button>Start Challenge</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-
-<style>
-
-
-.funded{
-
-padding:80px 8%;
-text-align:center;
-background:#050505;
-
-}
-
-
-.funded h2{
-
-font-size:45px;
-color:#d4af37;
-
-}
-
-
-
-
-.accounts{
-
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-margin-top:50px;
-
-}
-
-
-
-.account-card{
-
-
-width:330px;
-background:#111;
-border:1px solid #222;
-border-radius:20px;
-padding:35px;
-position:relative;
-transition:.3s;
-
-}
-
-
-
-.account-card:hover{
-
-transform:translateY(-12px);
-
-border-color:#d4af37;
-
-}
-
-
-
-.account-card h3{
-
-font-size:30px;
-color:white;
-
-}
-
-
-
-.account-card h4{
-
-
-color:#00ff88;
-margin:20px;
-
-}
-
-
-
-.account-card ul{
-
-list-style:none;
-line-height:2;
-color:#ccc;
-
-}
-
-
-
-.account-card button{
-
-margin-top:25px;
-padding:14px 35px;
-border:none;
-border-radius:30px;
-background:#d4af37;
-font-weight:bold;
-cursor:pointer;
-
-}
-
-.popular{
-
-box-shadow:0 0 30px rgba(212,175,55,.4);
-
-}
-
-
-
-.badge{
-
-position:absolute;
-top:-15px;
-left:50%;
-transform:translateX(-50%);
-background:#00ff88;
-
-color:black;
-padding:7px 20px;
-border-radius:20px;
-font-size:12px;
-font-weight:bold;
-
-}
-
-
-
-</style>
 
 <!-- MARKET TICKER -->
+
 
 <div class="ticker">
 
 <div class="ticker-track">
 
-<span>NASDAQ +1.24%</span>
-<span>XAUUSD $3425.60</span>
-<span>EURUSD 1.1745</span>
-<span>GBPJPY 201.30</span>
-<span>CADJPY 112.80</span>
-<span>US OIL $72.40</span>
-<span>EURGBP 0.8650</span>
+<span>XAUUSD ▲</span>
+<span>EURUSD ▲</span>
+<span>GBPJPY ▲</span>
+
+<span>NASDAQ ▲</span>
+<span>US OIL ▲</span>
+<span>CADJPY ▲</span>
 
 </div>
 
@@ -787,216 +149,160 @@ font-weight:bold;
 
 
 
-<style>
+<!-- CHALLENGES -->
 
 
-.ticker{
+<section id="challenges" 
 
-background:#0d0d0d;
-border-top:1px solid #222;
-border-bottom:1px solid #222;
-overflow:hidden;
-padding:15px 0;
-
-}
-
-.ticker-track{
-
-display:flex;
-gap:50px;
-white-space:nowrap;
-animation:move 18s linear infinite;
-
-}
+class="section">
 
 
+<h2>
+Choose Your Challenge
+</h2>
 
-.ticker span{
-
-color:#00ff88;
-font-weight:bold;
-
-
-}
-
-
-
-@keyframes move{
-
-from{
-transform:translateX(100%);
-}
-
-to{
-transform:translateX(-100%);
-}
-
-}
-
-
-
-
-
-.payout{
-
-position:fixed;
-bottom:25px;
-left:25px;
-
-background:#111;
-border:1px solid #00ff88;
-
-padding:15px 25px;
-border-radius:30px;
-
-display:flex;
-align-items:center;
-gap:10px;
-
-font-size:14px;
-
-animation:popup 4s infinite;
-
-}
-
-
-
-.dot{
-
-width:10px;
-height:10px;
-
-background:#00ff88;
-border-radius:50%;
-
-}
-
-
-
-@keyframes popup{
-
-0%,100%{
-opacity:0;
-transform:translateY(30px);
-}
-
-20%,80%{
-opacity:1;
-
-transform:translateY(0);
-}
-
-}
-
-
-</style>
-
-<!-- TRUSTED SECTION -->
-
-<section class="trusted">
-
-<h2>Trusted By Traders Worldwide</h2>
 
 <p>
-Join thousands of disciplined traders building their future with Apex Capital.
+Find the evaluation that matches your trading style.
 </p>
 
 
-<div class="trust-boxes">
 
-<div>
-<h3>10,000+</h3>
-<p>Active Traders</p>
+<div class="cards">
+
+
+
+
+<div class="card">
+
+<h3>
+Two Phase Challenge
+</h3>
+
+<h4>
+$5K - $200K
+</h4>
+
+
+<ul>
+
+<li>✓ Highest value model</li>
+<li>✓ Fee returned after first reward</li>
+<li>✓ For disciplined traders</li>
+<li>✓ Up to 95% split</li>
+
+</ul>
+
+
+<button>
+Start Challenge
+</button>
+
+
 </div>
 
 
-<div>
-<h3>$25M+</h3>
-<p>Rewards Paid</p>
+
+
+
+<div class="card featured">
+
+
+<h3>
+Single Phase Challenge
+</h3>
+
+<h4>
+$5K - $200K
+</h4>
+
+<ul>
+
+<li>✓ Fastest route to funding</li>
+<li>✓ First reward opportunity</li>
+<li>✓ Simple evaluation</li>
+<li>✓ Professional conditions</li>
+
+</ul>
+
+
+<button>
+Start Challenge
+</button>
+
+
+
 </div>
 
 
-<div>
-<h3>95%</h3>
-<p>Profit Share</p>
+
+
 </div>
 
-
-
-<div>
-<h3>24/7</h3>
-<p>Support</p>
-</div>
-
-</div>
 
 </section>
 
 
+<!-- RULES -->
 
 
-<!-- FAQ SECTION -->
+<section id="rules" class="section dark">
 
 
-<section class="faq">
+<h2>
+Trading Rules
+</h2>
 
 
-<h2>Frequently Asked Questions</h2>
+<div class="cards">
 
+<div class="card">
 
-<div class="faq-box">
-
-<h3>What is Apex Capital?</h3>
+<h3>
+Risk Management
+</h3>
 
 <p>
-Apex Capital provides traders with the opportunity to prove their skills and trade funded 
-
-accounts.
+Protect your account using proper position sizing.
 </p>
 
 </div>
 
 
 
-<div class="faq-box">
-
-<h3>How much profit can I keep?</h3>
-
-<p>
-Successful traders can keep up to 95% of their profits.
-</p>
+<div class="card">
 
 
-</div>
-
-
-
-<div class="faq-box">
-
-<h3>How fast can I get funded?</h3>
+<h3>
+Drawdown Rules
+</h3>
 
 <p>
-After passing the evaluation rules, traders can qualify for a funded account.
+Respect daily and maximum loss limits.
 </p>
 
 </div>
 
 
 
-<div class="faq-box">
+<div class="card">
 
-<h3>Do I need trading experience?</h3>
+<h3>
+Consistency
+</h3>
 
 <p>
-Anyone can participate, but discipline and risk management are required.
+Trade with discipline and follow your strategy.
 </p>
 
 </div>
 
 
+</div>
 
 
 </section>
+
 
 
 
@@ -1008,199 +314,24 @@ Anyone can participate, but discipline and risk management are required.
 <footer>
 
 
-<div class="footer-logo">
-
+<h2>
 APEX CAPITAL
-</div>
+</h2>
+
+<p>
+Empowering traders with opportunity and capital.
+</p>
 
 
 <p>
-Empowering traders with capital, technology and opportunity.
-</p>
-
-
-<div class="footer-links">
-
-<a href="#">Home</a>
-<a href="#">Challenges</a>
-<a href="#">Rules</a>
-
-<a href="#">Contact</a>
-
-</div>
-
-
-<p class="copyright">
-
 © 2026 Apex Capital. All Rights Reserved.
-
-</p>
-
-
-
-<p class="warning">
-
-Risk Warning: Trading involves risk. Past performance does not guarantee future results.
-
 </p>
 
 
 </footer>
 
 
-
-
-
-<style>
-
-.trusted{
-
-padding:80px 8%;
-text-align:center;
-background:#090909;
-
-}
-
-
-.trusted h2,
-.faq h2{
-
-font-size:42px;
-color:#d4af37;
-
-}
-
-
-
-.trust-boxes{
-
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
-margin-top:40px;
-
-}
-
-
-
-.trust-boxes div{
-
-background:#111;
-padding:30px;
-border-radius:15px;
-width:220px;
-border:1px solid #222;
-
-}
-
-
-
-.trust-boxes h3{
-
-font-size:35px;
-color:#00ff88;
-
-}
-
-
-
-
-
-.faq{
-
-padding:80px 8%;
-background:#050505;
-
-}
-
-
-.faq-box{
-
-max-width:800px;
-margin:20px auto;
-
-padding:25px;
-background:#111;
-border-radius:15px;
-border:1px solid #222;
-
-}
-
-
-.faq-box h3{
-
-color:white;
-margin-bottom:10px;
-
-}
-
-.faq-box p{
-
-color:#aaa;
-
-}
-
-
-
-
-footer{
-
-padding:50px 8%;
-background:#000;
-text-align:center;
-border-top:1px solid #222;
-
-}
-
-
-.footer-logo{
-
-font-size:35px;
-font-weight:bold;
-color:#d4af37;
-margin-bottom:15px;
-
-}
-
-
-
-.footer-links{
-
-margin:25px;
-
-}
-
-
-.footer-links a{
-
-color:white;
-text-decoration:none;
-margin:15px;
-
-}
-
-
-
-.copyright{
-
-
-color:#777;
-
-}
-
-
-.warning{
-
-margin-top:20px;
-font-size:13px;
-color:#555;
-
-}
-
-
-</style>
-
+<script src="script.js"></script>
 
 
 </body>
