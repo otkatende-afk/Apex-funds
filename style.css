@@ -842,3 +842,49 @@ color:#00ff88;
 font-weight:bold;
 
 }
+/* RECENT ACTIVITY */
+
+.activity{
+
+margin-top:60px;
+
+}
+
+.activity h2{
+
+color:#d4af37;
+margin-bottom:20px;
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:15px;
+overflow:hidden;
+
+}
+
+th{
+
+background:#d4af37;
+color:#000;
+padding:15px;
+
+}
+
+td{
+
+padding:15px;
+border-bottom:1px solid #222;
+text-align:center;
+
+}
+
+tr:hover{
+
+background:#1a1a1a;
+
+}
