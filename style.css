@@ -734,3 +734,68 @@ transition:.3s;
 transform:scale(1.05);
 
   }
+/* DASHBOARD SIDEBAR */
+
+.sidebar{
+
+position:fixed;
+left:0;
+top:0;
+width:240px;
+height:100%;
+background:#0a0a0a;
+padding:30px 20px;
+border-right:1px solid #222;
+
+}
+
+.sidebar h2{
+
+color:#d4af37;
+margin-bottom:40px;
+text-align:center;
+
+}
+
+.sidebar a{
+
+display:block;
+color:white;
+text-decoration:none;
+padding:15px;
+margin:8px 0;
+border-radius:10px;
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:#d4af37;
+color:black;
+
+}
+
+.main-content{
+
+margin-left:260px;
+
+}
+
+@media(max-width:700px){
+
+.sidebar{
+
+position:relative;
+width:100%;
+height:auto;
+
+}
+
+.main-content{
+
+margin-left:0;
+
+}
+
+}
