@@ -799,3 +799,46 @@ margin-left:0;
 }
 
 }
+/* ACCOUNT OVERVIEW */
+
+.overview{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin:30px 0;
+
+}
+
+.overview-card{
+
+flex:1;
+min-width:220px;
+background:#111;
+border:1px solid #222;
+border-radius:15px;
+padding:20px;
+transition:.3s;
+
+}
+
+.overview-card:hover{
+
+border-color:#d4af37;
+transform:translateY(-5px);
+
+}
+
+.overview-card h3{
+
+color:#d4af37;
+margin-bottom:10px;
+
+}
+
+.overview-card p{
+
+color:#00ff88;
+font-weight:bold;
+
+}
