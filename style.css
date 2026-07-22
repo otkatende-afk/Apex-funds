@@ -695,3 +695,42 @@ margin-top:10px;
 color:#aaa;
 
 }
+.quick-actions{
+
+margin-top:70px;
+
+}
+
+.quick-actions h2{
+
+text-align:center;
+color:#d4af37;
+margin-bottom:30px;
+
+}
+
+.quick-actions .card{
+
+text-align:center;
+
+}
+
+.quick-actions button{
+
+margin-top:20px;
+padding:14px 30px;
+background:#d4af37;
+color:#000;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.quick-actions button:hover{
+
+transform:scale(1.05);
+
+  }
