@@ -95,3 +95,8 @@ function selectPlan(plan, price){
     window.location.href = "checkout.html";
 
 }
+function goToPayment(){
+
+window.location.href = "payment.html";
+
+}
