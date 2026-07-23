@@ -1063,3 +1063,8 @@ background:#1a1a1a;
     background:#222;
     color:white;
 }
+.pay-now-btn:disabled{
+    background:#555;
+    color:#999;
+    cursor:not-allowed;
+}
