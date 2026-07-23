@@ -151,3 +151,8 @@ function completePayment(){
 alert("Payment integration coming soon!");
 
 }
+function completePayment(){
+
+    alert("Payment successful!");
+
+}
