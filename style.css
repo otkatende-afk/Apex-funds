@@ -1016,3 +1016,50 @@ border-bottom:1px solid #222;
 background:#1a1a1a;
 
 }
+.method-card{
+    background:#1b1b1b;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:20px;
+    margin:20px 0;
+}
+
+.method-card h3{
+    color:#d4af37;
+}
+
+.method-card p{
+    color:#ccc;
+}
+
+.payment-option{
+    width:100%;
+    background:#d4af37;
+    color:#000;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+#crypto-payment,
+#momo-payment{
+    background:#151515;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:20px;
+    margin-top:20px;
+}
+
+#crypto-payment input,
+#momo-payment input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #444;
+    background:#222;
+    color:white;
+}
