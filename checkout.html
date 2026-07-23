@@ -58,7 +58,9 @@ Select the funded account that matches your trading goals.
 
 </ul>
 
-<button>Select Plan</button>
+<button onclick="selectPlan('5K',69)">
+Select Plan
+</button>
 
 </div>
 
@@ -77,7 +79,9 @@ Select the funded account that matches your trading goals.
 
 </ul>
 
-<button>Select Plan</button>
+<button onclick="selectPlan('10K',129)">
+Select Plan
+</button>
 
 </div>
 
@@ -96,7 +100,9 @@ Select the funded account that matches your trading goals.
 
 </ul>
 
-<button>Select Plan</button>
+<button onclick="selectPlan('50K',349)">
+Select Plan
+</button>
 
 </div>
 
@@ -115,7 +121,9 @@ Select the funded account that matches your trading goals.
 
 </ul>
 
-<button>Select Plan</button>
+<button onclick="selectPlan('100K',599)">
+Select Plan
+</button>
 
 </div>
 
@@ -128,12 +136,13 @@ Select the funded account that matches your trading goals.
 
 <p>
 Selected Challenge
-<span>$100K Evaluation</span>
+<span id="selected-plan">$100k
+Evaluation</span>
 </p>
 
 <p>
 Challenge Fee
-<span>$599</span>
+<span id="plan-price">$599</span>
 </p>
 
 <p>
@@ -150,7 +159,7 @@ Discount
 
 <h3>
 Total
-<span>$599</span>
+<span id="total-price">$599</span>
 </h3>
 
 <input
