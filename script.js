@@ -67,3 +67,15 @@ answer.classList.toggle("show");
 });
 
 });
+function selectPlan(plan, price){
+
+document.getElementById("selected-plan").innerHTML =
+"$" + plan + " Evaluation";
+
+document.getElementById("plan-price").innerHTML =
+"$" + price;
+
+document.getElementById("total-price").innerHTML =
+"$" + price;
+
+}
