@@ -969,3 +969,50 @@ text-align:center;
 color:#aaa;
 
   }
+/* CHALLENGE COMPARISON */
+
+.comparison{
+
+margin-top:80px;
+
+}
+
+.comparison h2{
+
+text-align:center;
+color:#d4af37;
+margin-bottom:30px;
+
+}
+
+.comparison table{
+
+width:100%;
+background:#111;
+border-collapse:collapse;
+border-radius:15px;
+overflow:hidden;
+
+}
+
+.comparison th{
+
+background:#d4af37;
+color:#000;
+padding:16px;
+
+}
+
+.comparison td{
+
+padding:16px;
+text-align:center;
+border-bottom:1px solid #222;
+
+}
+
+.comparison tr:hover{
+
+background:#1a1a1a;
+
+}
