@@ -54,7 +54,8 @@ Total
 Pay using USDT (TRC20), Bitcoin or Ethereum.
 </p>
 
-<button class="payment-option">
+<button class="payment-option"
+onclick="showCrypto()">
 Select Crypto
 </button>
 
@@ -68,7 +69,8 @@ Select Crypto
 Pay using MTN MoMo or Airtel Money.
 </p>
 
-<button class="payment-option">
+<button class="payment-option"
+onclick="show MoMo()">
 Select Mobile Money
 </button>
 
@@ -76,7 +78,40 @@ Select Mobile Money
 
 
 </div>
+<div id="crypto-payment" style="display:none;">
 
+<h2>Crypto Payment</h2>
+
+<p><strong>USDT (TRC20)</strong></p>
+
+<p>
+Wallet Address:
+</p>
+
+<input
+type="text"
+value="YOUR-USDT-WALLET-ADDRESS"
+readonly>
+
+<p>
+Send the exact amount, then click Pay Securely.
+</p>
+
+</div>
+
+<div id="momo-payment" style="display:none;">
+
+<h2>Mobile Money</h2>
+
+<input
+type="text"
+placeholder="Enter MTN or Airtel Number">
+
+<p>
+You will receive a payment prompt on your phone.
+</p>
+
+</div>
 <button class="pay-now-btn">
 Pay Securely →
 </button>
