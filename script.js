@@ -129,3 +129,18 @@ window.onload = function(){
     }
 
 }
+function showCrypto(){
+
+document.getElementById("crypto-payment").style.display="block";
+
+document.getElementById("momo-payment").style.display="none";
+
+}
+
+function showMoMo(){
+
+document.getElementById("momo-payment").style.display="block";
+
+document.getElementById("crypto-payment").style.display="none";
+
+}
