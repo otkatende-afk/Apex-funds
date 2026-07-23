@@ -156,3 +156,28 @@ function completePayment(){
     window.location.href = "dashboard.html";
 
 }
+window.addEventListener("load", function () {
+
+    let plan = localStorage.getItem("plan");
+
+    if(plan){
+
+        let balance = document.getElementById("dashboard-balance");
+        let type = document.getElementById("challenge-type");
+        let status = document.getElementById("account-status");
+
+        if(balance){
+            balance.innerHTML = "$" + plan + ",000";
+        }
+
+        if(type){
+            type.innerHTML = "$" + plan + " Evaluation";
+        }
+
+        if(status){
+            status.innerHTML = "$" + plan + " Evaluation - Phase 1";
+        }
+
+    }
+
+});
