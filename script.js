@@ -146,3 +146,8 @@ document.getElementById("crypto-payment").style.display = "none";
 document.getElementById("payButton").disabled = false;
 
 }
+function completePayment(){
+
+alert("Payment integration coming soon!");
+
+}
