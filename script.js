@@ -100,3 +100,32 @@ function goToPayment(){
 window.location.href = "payment.html";
 
 }
+function selectPlan(plan, price){
+
+    localStorage.setItem("plan", plan);
+    localStorage.setItem("price", price);
+
+    window.location.href = "checkout.html";
+
+}
+
+
+window.onload = function(){
+
+    let plan = localStorage.getItem("plan");
+    let price = localStorage.getItem("price");
+
+    if(plan && price){
+
+        document.getElementById("selected-plan").innerHTML =
+        "$" + plan + " Evaluation";
+
+        document.getElementById("plan-price").innerHTML =
+        "$" + price;
+
+        document.getElementById("total-price").innerHTML =
+        "$" + price;
+
+    }
+
+}
