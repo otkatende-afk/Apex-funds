@@ -131,16 +131,18 @@ window.onload = function(){
 }
 function showCrypto(){
 
-document.getElementById("crypto-payment").style.display="block";
+document.getElementById("crypto-payment").style.display = "block";
+document.getElementById("momo-payment").style.display = "none";
 
-document.getElementById("momo-payment").style.display="none";
+document.getElementById("payButton").disabled = false;
 
 }
 
 function showMoMo(){
 
-document.getElementById("momo-payment").style.display="block";
+document.getElementById("momo-payment").style.display = "block";
+document.getElementById("crypto-payment").style.display = "none";
 
-document.getElementById("crypto-payment").style.display="none";
+document.getElementById("payButton").disabled = false;
 
 }
