@@ -888,3 +888,84 @@ tr:hover{
 background:#1a1a1a;
 
 }
+/* CHECKOUT */
+
+.checkout-summary{
+
+margin-top:70px;
+
+}
+
+.summary-box{
+
+max-width:700px;
+margin:auto;
+background:#111;
+padding:35px;
+border-radius:20px;
+border:1px solid #222;
+
+}
+
+.summary-box p,
+.summary-box h3{
+
+display:flex;
+justify-content:space-between;
+margin:18px 0;
+
+}
+
+.summary-box input{
+
+width:100%;
+padding:15px;
+margin-top:25px;
+background:#000;
+border:1px solid #333;
+color:white;
+border-radius:10px;
+
+}
+
+.apply-btn,
+.pay-btn{
+
+width:100%;
+padding:16px;
+margin-top:18px;
+border:none;
+border-radius:30px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.apply-btn{
+
+background:#333;
+color:white;
+
+}
+
+.pay-btn{
+
+background:#d4af37;
+color:black;
+
+}
+
+.pay-btn:hover{
+
+transform:scale(1.02);
+
+}
+
+.secure-payment{
+
+margin-top:30px;
+text-align:center;
+color:#aaa;
+
+  }
