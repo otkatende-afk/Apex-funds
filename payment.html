@@ -1,51 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Apex Capital Payment</title>
 
-<style>
-body{
-    background:#0b0b0b;
-    color:white;
-    font-family:Arial;
-    text-align:center;
-    padding:50px;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.payment-box{
-    background:#151515;
-    padding:30px;
-    border-radius:15px;
-    max-width:400px;
-    margin:auto;
-}
+<title>Payment | Apex Capital</title>
 
-button{
-    background:#d4af37;
-    border:none;
-    padding:15px 30px;
-    border-radius:8px;
-    cursor:pointer;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="payment-box">
+<div class="payment-container">
 
-<h1>Complete Payment</h1>
+<h1>Complete Your Order</h1>
 
-<p>Apex Capital Challenge</p>
+<p>Secure checkout powered by Apex Capital</p>
 
-<h2 id="amount">$0</h2>
+<div class="payment-summary">
 
-<button>
-Pay Now
+<h2>Order Summary</h2>
+
+<p>
+Challenge
+<span id="payment-plan">$5K Evaluation</span>
+</p>
+
+<p>
+Amount
+<span id="payment-price">$49</span>
+</p>
+
+<hr>
+
+<h3>
+Total
+<span id="payment-total">$49</span>
+</h3>
+
+</div>
+
+<div class="payment-methods">
+
+<h2>Select Payment Method</h2>
+
+<button class="payment-option">
+💳 Credit / Debit Card
+</button>
+
+<button class="payment-option">
+₿ Crypto
+</button>
+
+<button class="payment-option">
+📱 Mobile Money
 </button>
 
 </div>
 
+<button class="pay-now-btn">
+Pay Securely →
+</button>
+
+<p class="secure">
+🔒 256-bit SSL Secure Checkout
+</p>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
