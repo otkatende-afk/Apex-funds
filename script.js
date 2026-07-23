@@ -87,3 +87,11 @@ localStorage.setItem("price", price);
 window.location.href = "checkout.html";
 
 }
+function selectPlan(plan, price){
+
+    localStorage.setItem("plan", plan);
+    localStorage.setItem("price", price);
+
+    window.location.href = "checkout.html";
+
+}
