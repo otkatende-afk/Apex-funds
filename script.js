@@ -153,6 +153,6 @@ alert("Payment integration coming soon!");
 }
 function completePayment(){
 
-    alert("Payment successful!");
+    window.location.href = "dashboard.html";
 
 }
