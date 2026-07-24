@@ -1,260 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Trader Dashboard | Apex Capital</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
+
 <div class="sidebar">
-
-<h2>APEX</h2>
-
-<a href="dashboard.html">🏠 Dashboard</a>
-
-<a href="challenges.html">📈 Challenges</a>
-
-<a href="rewards.html">💰 Rewards</a>
-
-<a href="certificates.html">🏆 Certificates</a>
-
-<a href="profile.html">👤 Profile</a>
-
-<a href="settings.html">⚙️ Settings</a>
-
-<a href="index.html">🌐 Website</a>
-
-<a href="login.html">🚪 Logout</a>
-
+  <h2>APEX CAPITAL</h2>
+  <a href="dashboard.html">🏠 Dashboard</a>
+  <a href="challenges.html">📈 Challenges</a>
+  <a href="rewards.html">💰 Rewards</a>
+  <a href="certificates.html">🏆 Certificates</a>
+  <a href="profile.html">👤 Profile</a>
+  <a href="settings.html">⚙️ Settings</a>
+  <a href="index.html">🌐 Website</a>
+  <a href="login.html">🚪 Logout</a>
 </div>
 
 <div class="main-content">
-<nav>
 
-<div class="logo">
-APEX <span>CAPITAL</span>
-</div>
-<div class="nav-links">
-
-<a href="index.html">Home</a>
-
-<a href="dashboard.html">Dashboard</a>
-
-<a href="certificates.html">Certificates</a>
-
-<a href="rewards.html">Rewards</a>
-
-<a href="challenges.html">Challenges</a>
-
-<a href="profile.html">Profile</a>
-
-<a href="settings.html">Settings</a>
-
-<a href="login.html">Logout</a>
-
-</div>
-
+<nav class="top-nav">
+  <div>
+    <h1>Welcome, <span id="welcome-name">Trader</span></h1>
+    <p id="challenge-type">Evaluation Account</p>
+  </div>
 </nav>
 
-<section class="section">
-<section class="section">
+<section class="dashboard">
 
-<h2>Trader Dashboard</h2>
 <div class="overview">
-
-<div class="overview-card">
-<h3>💰 Balance</h3>
-<h2 id="dashboard-balance">$100,000</h2>
+<div class="overview-card"><h3>Balance</h3><h2 id="dashboard-balance">$100,000</h2></div>
+<div class="overview-card"><h3>Equity</h3><h2 id="dashboard-equity">$100,000</h2></div>
+<div class="overview-card"><h3>Profit</h3><h2 id="dashboard-profit">+$0</h2></div>
+<div class="overview-card"><h3>Daily Drawdown</h3><h2>0%</h2></div>
+<div class="overview-card"><h3>Trading Days</h3><h2>0 / 30</h2></div>
+<div class="overview-card"><h3>Profit Target</h3><h2>0 / 10%</h2></div>
 </div>
-
-<div class="overview-card">
-<h3>📈 Equity</h3>
-<h2 id="dashboard-equity">$100,000</h2>
-</div>
-
-<div class="overview-card">
-<h3>💵 Profit</h3>
-<h2 id="dashboard-profit" style="color:#00ff88;">+$0</h2>
-</div>
-
-<div class="overview-card">
-<h3>📉 Daily Drawdown</h3>
-<h2>0%</h2>
-</div>
-
-<div class="overview-card">
-<h3>🎯 Profit Target</h3>
-<h2>0 / 10%</h2>
-</div>
-
-<div class="overview-card">
-<h3>📅 Trading Days</h3>
-<h2>0 / 30</h2>
-</div>
-
-</div>
-
 
 <div class="cards">
 
 <div class="card">
-<h3>👤 Trader</h3>
-<h2 id="welcome-name">Welcome, Trader</h2>
-<p id="challenge-type">$100K Evaluation</p>
-<p>Phase 1 • Active</p>
-</div>
-
-<div class="card">
-<h3>📊 Challenge Progress</h3>
-
+<h3>Challenge Progress</h3>
 <progress value="0" max="100"></progress>
-
 <p>0% Complete</p>
-
 </div>
 
 <div class="card">
-<h3>🎯 Trading Objectives</h3>
-
-<p>Profit Target: 10%</p>
-
-<p>Daily Loss: 5%</p>
-
-<p>Max Loss: 10%</p>
-
-<p>Minimum Trading Days: 5</p>
-
-</div>
-
-<div class="card">
-<h3>📢 Apex Announcements</h3>
-
+<h3>Trading Objectives</h3>
 <ul>
-<li>✅ Welcome to Apex Capital.</li>
-<li>✅ Complete your challenge to become funded.</li>
-<li>✅ Payouts available after approval.</li>
+<li>Profit Target: 10%</li>
+<li>Daily Loss: 5%</li>
+<li>Max Drawdown: 10%</li>
+<li>Minimum Trading Days: 5</li>
 </ul>
-
 </div>
 
 <div class="card">
-<h3>⚡ Quick Actions</h3>
-
-<button onclick="window.location.href='challenges.html'">
-New Challenge
-</button>
-
-<button onclick="window.location.href='rewards.html'">
-Request Reward
-</button>
-
-<button onclick="window.location.href='profile.html'">
-Profile
-</button>
-
+<h3>Quick Actions</h3>
+<button onclick="location.href='challenges.html'">New Challenge</button>
+<button onclick="location.href='rewards.html'">Request Reward</button>
+<button onclick="location.href='certificates.html'">Certificates</button>
+<button onclick="location.href='profile.html'">Profile</button>
 </div>
 
 <div class="card">
-<h3>🏆 Account Status</h3>
-
-<h2 style="color:#00ff88;">
-ACTIVE
-</h2>
-
-<p>Evaluation Phase 1</p>
-
+<h3>Announcements</h3>
+<p>Welcome to Apex Capital.</p>
+<p>Stay disciplined and respect your risk limits.</p>
+<p>Payouts are processed after approval.</p>
 </div>
 
 </div>
-<table>
 
-<tr>
-<th>Date</th>
-<th>Pair</th>
-<th>Type</th>
-<th>Profit</th>
-</tr>
-
-<tr>
-<td>22 Jul</td>
-<td>XAUUSD</td>
-<td>Buy</td>
-<td style="color:#00ff88;">+$450</td>
-</tr>
-
-<tr>
-<td>21 Jul</td>
-<td>GBPJPY</td>
-<td>Sell</td>
-<td style="color:#00ff88;">+$310</td>
-</tr>
-
-<tr>
-<td>20 Jul</td>
-<td>EURUSD</td>
-<td>Buy</td>
-<td style="color:#ff4444;">-$120</td>
-</tr>
-
-<tr>
-<td>19 Jul</td>
-<td>NASDAQ</td>
-<td>Buy</td>
-<td style="color:#00ff88;">+$980</td>
-</tr>
-
+<div class="activity">
+<h2>Recent Trading Activity</h2>
+<table border="1" cellpadding="8">
+<tr><th>Date</th><th>Pair</th><th>Result</th></tr>
+<tr><td>-</td><td>-</td><td>No trades yet</td></tr>
 </table>
+</div>
 
-              </div>
 </section>
-<div class="quick-actions">
-
-<h2>Quick Actions</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🚀 Start New Challenge</h3>
-<button onclick="window.location.href='challenges.html'">
-Choose Challenge
-</button>
-</div>
-
-<div class="card">
-<h3>💰 Request Reward</h3>
-<button onclick="window.location.href='rewards.html'">
-Request Payout
-</button>
-</div>
-
-<div class="card">
-<h3>📜 View Certificate</h3>
-<button onclick="window.location.href='certificates.html'">
-Open Certificate
-</button>
-</div>
-
-<div class="card">
-<h3>⚙ Account Settings</h3>
-<button onclick="window.location.href='profile.html'">
-Manage Profile
-</button>
-</div>
 
 </div>
 
-</div>
-</section>
-</div>
 <script src="script.js"></script>
-
 </body>
-
 </html>
+
