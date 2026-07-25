@@ -1,93 +1,1100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Trader Dashboard | Apex Capital</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
+<!-- ========================= -->
+<!-- SIDEBAR -->
+<!-- ========================= -->
+
 <div class="sidebar">
-  <h2>APEX CAPITAL</h2>
-  <a href="dashboard.html">🏠 Dashboard</a>
-  <a href="challenges.html">📈 Challenges</a>
-  <a href="rewards.html">💰 Rewards</a>
-  <a href="certificates.html">🏆 Certificates</a>
-  <a href="profile.html">👤 Profile</a>
-  <a href="settings.html">⚙️ Settings</a>
-  <a href="index.html">🌐 Website</a>
-  <a href="login.html">🚪 Logout</a>
+
+<div class="logo-box">
+<h1>APEX</h1>
+<span>CAPITAL</span>
 </div>
+
+<a class="active" href="dashboard.html">
+🏠 Dashboard
+</a>
+
+<a href="challenges.html">
+📈 Challenges
+</a>
+
+<a href="rewards.html">
+💰 Rewards
+</a>
+
+<a href="certificates.html">
+🏆 Certificates
+</a>
+
+<a href="profile.html">
+👤 Profile
+</a>
+
+<a href="settings.html">
+⚙️ Settings
+</a>
+
+<a href="index.html">
+🌐 Website
+</a>
+
+<a href="login.html">
+🚪 Logout
+</a>
+
+</div>
+
+<!-- ========================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================= -->
 
 <div class="main-content">
 
-<nav class="top-nav">
-  <div>
-    <h1>Welcome, <span id="welcome-name">Trader</span></h1>
-    <p id="challenge-type">Evaluation Account</p>
-  </div>
+<!-- ========================= -->
+<!-- TOP BAR -->
+<!-- ========================= -->
+
+<nav class="topbar">
+
+<div class="welcome">
+
+<h1>
+Welcome Back,
+<span id="welcome-name">
+James
+</span>
+</h1>
+
+<p>
+
+<span id="challenge-type">
+
+$100K Evaluation
+
+</span>
+
+•
+
+Phase 1
+
+•
+
+<span class="status-active">
+
+ACTIVE
+
+</span>
+
+</p>
+
+</div>
+
+<div class="top-actions">
+
+<input
+type="search"
+placeholder="Search dashboard...">
+
+<button>
+
+🔔
+
+</button>
+
+<div class="avatar">
+
+J
+
+</div>
+
+</div>
+
 </nav>
 
-<section class="dashboard">
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
 
-<div class="overview">
-<div class="overview-card"><h3>Balance</h3><h2 id="dashboard-balance">$100,000</h2></div>
-<div class="overview-card"><h3>Equity</h3><h2 id="dashboard-equity">$100,000</h2></div>
-<div class="overview-card"><h3>Profit</h3><h2 id="dashboard-profit">+$0</h2></div>
-<div class="overview-card"><h3>Daily Drawdown</h3><h2>0%</h2></div>
-<div class="overview-card"><h3>Trading Days</h3><h2>0 / 30</h2></div>
-<div class="overview-card"><h3>Profit Target</h3><h2>0 / 10%</h2></div>
-</div>
+<section class="hero-banner">
 
-<div class="cards">
+<div>
 
-<div class="card">
-<h3>Challenge Progress</h3>
-<progress value="0" max="100"></progress>
-<p>0% Complete</p>
-</div>
+<h2>
 
-<div class="card">
-<h3>Trading Objectives</h3>
-<ul>
-<li>Profit Target: 10%</li>
-<li>Daily Loss: 5%</li>
-<li>Max Drawdown: 10%</li>
-<li>Minimum Trading Days: 5</li>
-</ul>
-</div>
+Trade With Confidence
 
-<div class="card">
-<h3>Quick Actions</h3>
-<button onclick="location.href='challenges.html'">New Challenge</button>
-<button onclick="location.href='rewards.html'">Request Reward</button>
-<button onclick="location.href='certificates.html'">Certificates</button>
-<button onclick="location.href='profile.html'">Profile</button>
-</div>
+</h2>
 
-<div class="card">
-<h3>Announcements</h3>
-<p>Welcome to Apex Capital.</p>
-<p>Stay disciplined and respect your risk limits.</p>
-<p>Payouts are processed after approval.</p>
-</div>
+<p>
+
+Pass your challenge and keep up to
+
+<strong>95% Profit Split.</strong>
+
+</p>
 
 </div>
 
-<div class="activity">
-<h2>Recent Trading Activity</h2>
-<table border="1" cellpadding="8">
-<tr><th>Date</th><th>Pair</th><th>Result</th></tr>
-<tr><td>-</td><td>-</td><td>No trades yet</td></tr>
-</table>
+<button class="primary-btn">
+
+Request Reward
+
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- ACCOUNT OVERVIEW -->
+<!-- ========================= -->
+
+<section class="overview-grid">
+
+<div class="overview-card">
+
+<h4>
+
+💰 Balance
+
+</h4>
+
+<h2 id="dashboard-balance">
+
+$100,000
+
+</h2>
+
+<p>
+
+Starting Balance
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+📈 Equity
+
+</h4>
+
+<h2 id="dashboard-equity">
+
+$100,000
+
+</h2>
+
+<p>
+
+Live Equity
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+💵 Profit
+
+</h4>
+
+<h2 class="profit"
+
+id="dashboard-profit">
+
++$0
+
+</h2>
+
+<p>
+
+Current Profit
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+📉 Daily Drawdown
+
+</h4>
+
+<h2>
+
+0%
+
+</h2>
+
+<p>
+
+Maximum 5%
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+📊 Max Drawdown
+
+</h4>
+
+<h2>
+
+0%
+
+</h2>
+
+<p>
+
+Maximum 10%
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+📅 Trading Days
+
+</h4>
+
+<h2>
+
+0 / 30
+
+</h2>
+
+<p>
+
+Minimum 5 Days
+
+</p>
+
 </div>
 
 </section>
 
+<!-- ========================= -->
+<!-- CHALLENGE PROGRESS -->
+<!-- ========================= -->
+
+<section class="dashboard-row">
+
+<div class="progress-panel">
+
+<h2>
+
+🎯 Challenge Progress
+
+</h2>
+
+<div class="progress-info">
+
+<div>
+
+<h3>
+
+68%
+
+</h3>
+
+<p>
+
+Challenge Completed
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+8%
+
+</h3>
+
+<p>
+
+Target
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+5%
+
+</h3>
+
+<p>
+
+Daily Loss Limit
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+10%
+
+</h3>
+
+<p>
+
+Maximum Loss
+
+</p>
+
+</div>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"
+style="width:68%;">
+
+</div>
+
+</div>
+
+<p class="progress-text">
+
+You're only <strong>32%</strong> away from completing
+Phase 1.
+
+</p>
+
+</div>
+
+<div class="objectives-panel">
+
+<h2>
+
+📋 Trading Objectives
+
+</h2>
+
+<ul>
+
+<li>
+
+✅ Minimum Trading Days
+
+<span>
+
+0 / 5
+
+</span>
+
+</li>
+
+<li>
+
+✅ Daily Drawdown
+
+<span>
+
+0% / 5%
+
+</span>
+
+</li>
+
+<li>
+
+✅ Maximum Drawdown
+
+<span>
+
+0% / 10%
+
+</span>
+
+</li>
+
+<li>
+
+🟡 Profit Target
+
+<span>
+
+0% / 8%
+
+</span>
+
+</li>
+
+<li>
+
+🟢 Account Status
+
+<span class="status-active">
+
+ACTIVE
+
+</span>
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ACCOUNT PERFORMANCE -->
+<!-- ========================= -->
+
+<section class="dashboard-row">
+
+<div class="performance-panel">
+
+<h2>
+
+📊 Account Performance
+
+</h2>
+
+<div class="chart-placeholder">
+
+<h1>
+
+📈
+
+</h1>
+
+<p>
+
+Performance Chart
+
+(Chart will be connected later)
+
+</p>
+
+</div>
+
+</div>
+
+<div class="account-info">
+
+<h2>
+
+🏦 Account Details
+
+</h2>
+
+<table class="info-table">
+
+<tr>
+
+<td>
+
+Account Size
+
+</td>
+
+<td>
+
+$100,000
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Challenge Type
+
+</td>
+
+<td>
+
+Two Phase
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Platform
+
+</td>
+
+<td>
+
+MetaTrader 5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Profit Split
+
+</td>
+
+<td>
+
+Up to 95%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Leverage
+
+</td>
+
+<td>
+
+1:100
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Trading Status
+
+</td>
+
+<td class="status-active">
+
+Active
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- RECENT TRADING ACTIVITY -->
+<!-- ========================= -->
+
+<section class="dashboard-row">
+
+<div class="activity-panel">
+
+<h2>
+
+📈 Recent Trading Activity
+
+</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+<th>Pair</th>
+<th>Type</th>
+<th>Lot</th>
+<th>Profit</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>22 Jul</td>
+<td>XAUUSD</td>
+<td>BUY</td>
+<td>1.00</td>
+<td class="profit">+$450</td>
+
+</tr>
+
+<tr>
+
+<td>21 Jul</td>
+<td>GBPJPY</td>
+<td>SELL</td>
+<td>0.50</td>
+<td class="profit">+$310</td>
+
+</tr>
+
+<tr>
+
+<td>20 Jul</td>
+<td>EURUSD</td>
+<td>BUY</td>
+<td>0.30</td>
+<td class="loss">-$120</td>
+
+</tr>
+
+<tr>
+
+<td>19 Jul</td>
+<td>NAS100</td>
+<td>BUY</td>
+<td>2.00</td>
+<td class="profit">+$980</td>
+
+</tr>
+
+<tr>
+
+<td>18 Jul</td>
+<td>US30</td>
+<td>SELL</td>
+<td>1.50</td>
+<td class="profit">+$620</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="announcement-panel">
+
+<h2>
+
+📢 Apex Announcements
+
+</h2>
+
+<div class="announcement-card">
+
+<h4>
+
+🚀 New Feature
+
+</h4>
+
+<p>
+
+Crypto and Mobile Money payments are now available.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+💰 Profit Split
+
+</h4>
+
+<p>
+
+Eligible funded traders can receive up to
+<strong>95% Profit Split.</strong>
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+🏆 Reminder
+
+</h4>
+
+<p>
+
+Complete Phase 1 to unlock your funded account.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+📅 Next Reward Window
+
+</h4>
+
+<p>
+
+Reward requests open every 14 days for eligible traders.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- QUICK ACTIONS -->
+<!-- ========================= -->
+
+<section class="quick-actions">
+
+<h2>
+
+⚡ Quick Actions
+
+</h2>
+
+<div class="action-grid">
+
+<div class="action-card">
+
+<h3>
+
+🚀 Start Challenge
+
+</h3>
+
+<p>
+
+Purchase a new evaluation challenge.
+
+</p>
+
+<a href="challenges.html" class="action-btn">
+
+Choose Challenge
+
+</a>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+💰 Request Reward
+
+</h3>
+
+<p>
+
+Submit your payout request once eligible.
+
+</p>
+
+<a href="rewards.html" class="action-btn">
+
+Request Reward
+
+</a>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+🏆 Certificates
+
+</h3>
+
+<p>
+
+View and download your certificates.
+
+</p>
+
+<a href="certificates.html" class="action-btn">
+
+Open Certificates
+
+</a>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+👤 My Profile
+
+</h3>
+
+<p>
+
+Update your account information.
+
+</p>
+
+<a href="profile.html" class="action-btn">
+
+Manage Profile
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- REWARD STATUS -->
+<!-- ========================= -->
+
+<section class="dashboard-row">
+
+<div class="reward-panel">
+
+<h2>
+
+💰 Reward Status
+
+</h2>
+
+<div class="reward-box">
+
+<div>
+
+<h3>
+
+Next Reward
+
+</h3>
+
+<p>
+
+14 Days Remaining
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Estimated Reward
+
+</h3>
+
+<p class="profit">
+
+$2,450
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Profit Split
+
+</h3>
+
+<p>
+
+Up to 95%
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Status
+
+</h3>
+
+<p class="status-active">
+
+Eligible Soon
+
+</p>
+
+</div>
+
+</div>
+
+<a href="rewards.html" class="primary-btn">
+
+Request Reward
+
+</a>
+
+</div>
+
+<div class="market-panel">
+
+<h2>
+
+🌍 Market Watch
+
+</h2>
+
+<table class="market-table">
+
+<tr>
+
+<td>🟡 Gold</td>
+
+<td>XAUUSD</td>
+
+<td class="profit">Bullish</td>
+
+</tr>
+
+<tr>
+
+<td>💷 GBPJPY</td>
+
+<td>GBPJPY</td>
+
+<td class="loss">Bearish</td>
+
+</tr>
+
+<tr>
+
+<td>🇺🇸 NAS100</td>
+
+<td>NASDAQ</td>
+
+<td class="profit">Bullish</td>
+
+</tr>
+
+<tr>
+
+<td>💶 EURUSD</td>
+
+<td>EURUSD</td>
+
+<td>Neutral</td>
+
+</tr>
+
+<tr>
+
+<td>🛢 USOIL</td>
+
+<td>WTI</td>
+
+<td class="profit">Bullish</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer class="dashboard-footer">
+
+<div>
+
+<h3>
+
+APEX CAPITAL
+
+</h3>
+
+<p>
+
+Professional Proprietary Trading Firm
+
+</p>
+
+</div>
+
+<div>
+
+<p>
+
+© 2026 Apex Capital.
+
+All Rights Reserved.
+
+</p>
+
+<p>
+
+Trade Smart. Stay Disciplined.
+
+</p>
+
+</div>
+
+</footer>
+
 </div>
 
 <script src="script.js"></script>
-</body>
-</html>
 
+</body>
+
+</html>
