@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Manage Traders |
+Apex Capital Admin
+
+</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<!--==================================
+SIDEBAR
+===================================-->
+
+<div class="sidebar">
+
+<div class="logo-box">
+
+<h1>APEX</h1>
+
+<span>ADMIN</span>
+
+</div>
+
+<a href="admin.html">
+
+📊 Dashboard
+
+</a>
+
+<a class="active"
+href="admin-traders.html">
+
+👥 Traders
+
+</a>
+
+<a href="admin-challenges.html">
+
+📈 Challenges
+
+</a>
+
+<a href="admin-payouts.html">
+
+💰 Payouts
+
+</a>
+
+<a href="admin-certificates.html">
+
+🏆 Certificates
+
+</a>
+
+<a href="admin-settings.html">
+
+⚙️ Settings
+
+</a>
+
+<a href="dashboard.html">
+
+🌐 Trader Dashboard
+
+</a>
+
+<a href="login.html">
+
+🚪 Logout
+
+</a>
+
+</div>
+
+<!--==================================
+MAIN CONTENT
+===================================-->
+
+<div class="main-content">
+
+<nav class="topbar">
+
+<div class="welcome">
+
+<h1>
+
+Trader Management
+
+</h1>
+
+<p>
+
+Create, edit, search and manage every Apex Capital trader.
+
+</p>
+
+</div>
+
+<div class="top-actions">
+
+<input
+type="search"
+placeholder="Search trader...">
+
+<button>
+
+🔍
+
+</button>
+
+</div>
+
+</nav>
+
+<!--==================================
+HEADER
+===================================-->
+
+<section class="hero-banner">
+
+<div>
+
+<h2>
+
+👥 Manage Traders
+
+</h2>
+
+<p>
+
+Monitor trader accounts, funded status and challenge progress.
+
+</p>
+
+</div>
+
+<button class="primary-btn">
+
++ Add Trader
+
+</button>
+
+</section>
+
+<!--==================================
+OVERVIEW
+===================================-->
+
+<section class="overview-grid">
+
+<div class="overview-card">
+
+<h4>
+
+👥 Total Traders
+
+</h4>
+
+<h2>
+
+1,248
+
+</h2>
+
+<p>
+
+Registered
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+🟢 Active
+
+</h4>
+
+<h2>
+
+832
+
+</h2>
+
+<p>
+
+Trading
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+🏆 Funded
+
+</h4>
+
+<h2>
+
+163
+
+</h2>
+
+<p>
+
+Live Accounts
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+❌ Failed
+
+</h4>
+
+<h2>
+
+253
+
+</h2>
+
+<p>
+
+Evaluation Failed
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+TRADERS TABLE
+===================================-->
+
+<section class="activity-panel">
+
+<h2>
+
+📋 All Traders
+
+</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Account</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>#1001</td>
+
+<td>James</td>
+
+<td>james@email.com</td>
+
+<td>$100K</td>
+
+<td class="profit">
+
+ACTIVE
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+View
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1002</td>
+
+<td>Michael</td>
+
+<td>michael@email.com</td>
+
+<td>$50K</td>
+
+<td>
+
+Phase 2
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Edit
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1003</td>
+
+<td>Sarah</td>
+
+<td>sarah@email.com</td>
+
+<td>$10K</td>
+
+<td class="profit">
+
+FUNDED
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Manage
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1004</td>
+
+<td>David</td>
+
+<td>david@email.com</td>
+
+<td>$25K</td>
+
+<td class="loss">
+
+FAILED
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Review
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!--==================================
+TRADER ACTIONS
+===================================-->
+
+<section class="quick-actions">
+
+<h2>
+
+⚡ Trader Management
+
+</h2>
+
+<div class="action-grid">
+
+<div class="action-card">
+
+<h3>
+
+➕ Add New Trader
+
+</h3>
+
+<p>
+
+Create a new Apex Capital trader account.
+
+</p>
+
+<button class="primary-btn">
+
+Create Trader
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+✏ Edit Trader
+
+</h3>
+
+<p>
+
+Update trader information and account details.
+
+</p>
+
+<button class="primary-btn">
+
+Edit Trader
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+⛔ Suspend Account
+
+</h3>
+
+<p>
+
+Temporarily disable a trader account.
+
+</p>
+
+<button class="primary-btn">
+
+Suspend
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+🗑 Delete Trader
+
+</h3>
+
+<p>
+
+Permanently remove a trader account.
+
+</p>
+
+<button class="primary-btn">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+RECENT ACTIVITY
+===================================-->
+
+<section class="dashboard-row">
+
+<div class="activity-panel">
+
+<h2>
+
+🕒 Recent Admin Activity
+
+</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Admin</th>
+
+<th>Action</th>
+
+<th>Result</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>22 Jul</td>
+
+<td>Admin</td>
+
+<td>Created Trader</td>
+
+<td class="profit">
+
+Success
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>22 Jul</td>
+
+<td>Admin</td>
+
+<td>Approved Payout</td>
+
+<td class="profit">
+
+Completed
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>21 Jul</td>
+
+<td>Admin</td>
+
+<td>Updated Challenge</td>
+
+<td class="profit">
+
+Saved
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>20 Jul</td>
+
+<td>Admin</td>
+
+<td>Suspended Trader</td>
+
+<td>
+
+Done
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="announcement-panel">
+
+<h2>
+
+📢 Admin Notes
+
+</h2>
+
+<div class="announcement-card">
+
+<h4>
+
+👥 Trader Growth
+
+</h4>
+
+<p>
+
+1,248 registered traders and growing steadily.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+💰 Pending Payouts
+
+</h4>
+
+<p>
+
+18 payout requests require approval.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+🏆 Funded Accounts
+
+</h4>
+
+<p>
+
+163 traders are currently funded.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+FOOTER
+===================================-->
+
+<footer class="dashboard-footer">
+
+<div>
+
+<h3>
+
+APEX CAPITAL ADMIN
+
+</h3>
+
+<p>
+
+Trader Management System
+
+</p>
+
+</div>
+
+<div>
+
+<p>
+
+© 2026 Apex Capital
+
+</p>
+
+<p>
+
+Manage • Monitor • Scale
+
+</p>
+
+</div>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
