@@ -1,183 +1,366 @@
+/*=========================================
+APEX CAPITAL
+SCRIPT.JS - PART 1
+=========================================*/
 
-// APEX CAPITAL V2 JAVASCRIPT
+//==============================
+// TRADER INFORMATION
+//==============================
 
+const trader = {
 
-function toggleMenu(){
+name: "James",
 
-const menu = document.getElementById("navMenu");
+accountSize: 100000,
 
-menu.classList.toggle("show");
+balance: 100000,
 
-}
+equity: 100000,
 
+profit: 0,
 
-function helpChoose(){
+phase: "Phase 1",
 
-let choice = prompt(
-"Choose your trading style:\n\n1 - Beginner\n2 - Experienced\n3 - Professional"
-);
+status: "ACTIVE",
 
+challenge: "$100K Evaluation",
 
-if(choice=="1"){
+profitTarget: 8,
 
-alert(
-"We recommend the $5K or $10K challenge. Focus on discipline and risk management."
+dailyLoss: 5,
 
-);
+maxLoss: 10,
 
-}
+tradingDays: 0,
 
+minimumDays: 5,
 
-else if(choice=="2"){
+rewardDays: 14
 
-alert(
-"We recommend the $25K or $50K challenge. Good balance between opportunity and risk."
-);
+};
 
-}
-
-else if(choice=="3"){
-
-alert(
-"We recommend the $100K or $200K challenge. Built for experienced traders."
-);
-
-}
-
-
-else{
-
-alert(
-"Please choose 1, 2, or 3."
-);
-
-
-}
-
-}
-
-document.querySelectorAll(".faq-question").forEach(button=>{
-
-button.addEventListener("click",()=>{
-
-const answer=button.nextElementSibling;
-
-answer.classList.toggle("show");
-
-});
-
-});
-function selectPlan(plan, price){
-
-document.getElementById("selected-plan").innerHTML =
-"$" + plan + " Evaluation";
-
-document.getElementById("plan-price").innerHTML =
-"$" + price;
-
-document.getElementById("total-price").innerHTML =
-"$" + price;
-
-}
-function selectPlan(plan, price){
-
-localStorage.setItem("plan", plan);
-localStorage.setItem("price", price);
-
-window.location.href = "checkout.html";
-
-}
-function selectPlan(plan, price){
-
-    localStorage.setItem("plan", plan);
-    localStorage.setItem("price", price);
-
-    window.location.href = "checkout.html";
-
-}
-function goToPayment(){
-
-window.location.href = "payment.html";
-
-}
-function selectPlan(plan, price){
-
-    localStorage.setItem("plan", plan);
-    localStorage.setItem("price", price);
-
-    window.location.href = "checkout.html";
-
-}
-
+//==============================
+// LOAD DASHBOARD
+//==============================
 
 window.onload = function(){
 
-    let plan = localStorage.getItem("plan");
-    let price = localStorage.getItem("price");
+loadDashboard();
 
-    if(plan && price){
+};
 
-        document.getElementById("selected-plan").innerHTML =
-        "$" + plan + " Evaluation";
+//==============================
+// UPDATE DASHBOARD
+//==============================
 
-        document.getElementById("plan-price").innerHTML =
-        "$" + price;
+function loadDashboard(){
 
-        document.getElementById("total-price").innerHTML =
-        "$" + price;
+setText("welcome-name",trader.name);
 
-    }
+setText("dashboard-balance",
+"$"+number(trader.balance));
 
-}
-function showCrypto(){
+setText("dashboard-equity",
+"$"+number(trader.equity));
 
-document.getElementById("crypto-payment").style.display = "block";
-document.getElementById("momo-payment").style.display = "none";
+setText("dashboard-profit",
+profitText());
 
-document.getElementById("payButton").disabled = false;
+setText("challenge-type",
+trader.challenge);
 
-}
-
-function showMoMo(){
-
-document.getElementById("momo-payment").style.display = "block";
-document.getElementById("crypto-payment").style.display = "none";
-
-document.getElementById("payButton").disabled = false;
+setText("account-status",
+trader.status);
 
 }
-function completePayment(){
 
-alert("Payment integration coming soon!");
+//==============================
+// HELPERS
+//==============================
+
+function setText(id,value){
+
+const element=document.getElementById(id);
+
+if(element){
+
+element.innerHTML=value;
 
 }
-function completePayment(){
-
-    window.location.href = "dashboard.html";
 
 }
-window.addEventListener("load", function () {
 
-    let plan = localStorage.getItem("plan");
+function number(value){
 
-    if(plan){
+return value.toLocaleString();
 
-        let balance = document.getElementById("dashboard-balance");
-        let type = document.getElementById("challenge-type");
-        let status = document.getElementById("account-status");
+}
 
-        if(balance){
-            balance.innerHTML = "$" + plan + ",000";
-        }
+function profitText(){
 
-        if(type){
-            type.innerHTML = "$" + plan + " Evaluation";
-        }
+if(trader.profit>=0){
 
-        if(status){
-            status.innerHTML = "$" + plan + " Evaluation - Phase 1";
-        }
+return "+$"+number(trader.profit);
 
-    }
+}
+
+return "-$"+number(Math.abs(trader.profit));
+
+}
+
+//==============================
+// NOTIFICATIONS
+//==============================
+
+function showNotification(message){
+
+alert(message);
+
+}
+
+//==============================
+// QUICK ACTION BUTTONS
+//==============================
+
+function startChallenge(){
+
+window.location.href="challenges.html";
+
+}
+
+function requestReward(){
+
+window.location.href="rewards.html";
+
+}
+
+function openCertificates(){
+
+window.location.href="certificates.html";
+
+}
+
+function manageProfile(){
+
+window.location.href="profile.html";
+
+}
+
+//==============================
+// BUTTON EVENTS
+//==============================
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const primaryButton=document.querySelector(".primary-btn");
+
+if(primaryButton){
+
+primaryButton.addEventListener("click",function(){
+
+requestReward();
 
 });
+
+}
+
+const actionButtons=document.querySelectorAll(".action-btn");
+
+actionButtons.forEach(function(button){
+
+const text=button.textContent.toLowerCase();
+
+if(text.includes("challenge")){
+
+button.addEventListener("click",function(e){
+
+e.preventDefault();
+
+startChallenge();
+
+});
+
+}
+
+if(text.includes("reward")){
+
+button.addEventListener("click",function(e){
+
+e.preventDefault();
+
+requestReward();
+
+});
+
+}
+
+if(text.includes("certificate")){
+
+button.addEventListener("click",function(e){
+
+e.preventDefault();
+
+openCertificates();
+
+});
+
+}
+
+if(text.includes("profile")){
+
+button.addEventListener("click",function(e){
+
+e.preventDefault();
+
+manageProfile();
+
+});
+
+}
+
+});
+
+});
+
+//==============================
+// SIMULATE ACCOUNT UPDATES
+//==============================
+
+function updateProfit(amount){
+
+trader.profit=amount;
+
+trader.equity=trader.balance+amount;
+
+setText("dashboard-profit",profitText());
+
+setText("dashboard-equity",
+"$"+number(trader.equity));
+
+}
+
+setTimeout(function(){
+
+updateProfit(2450);
+
+},2000);
+
+//==============================
+// PROGRESS BAR
+//==============================
+
+function updateProgress(percent){
+
+const progress=document.querySelector(".progress-fill");
+
+if(progress){
+
+progress.style.width=percent+"%";
+
+}
+
+const progressText=document.querySelector(".progress-text");
+
+if(progressText){
+
+progressText.innerHTML=
+
+"You're only <strong>"+
+
+(100-percent)+
+
+"%</strong> away from completing Phase 1.";
+
+}
+
+}
+
+updateProgress(68);
+
+//==============================
+// LIVE DATE & TIME
+//==============================
+
+function updateClock(){
+
+const now=new Date();
+
+const options={
+
+weekday:"long",
+
+day:"numeric",
+
+month:"long",
+
+year:"numeric",
+
+hour:"2-digit",
+
+minute:"2-digit"
+
+};
+
+const clock=document.getElementById("live-date");
+
+if(clock){
+
+clock.innerHTML=now.toLocaleString("en-UG",options);
+
+}
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+//==============================
+// SEARCH
+//==============================
+
+const searchBox=document.querySelector(".top-actions input");
+
+if(searchBox){
+
+searchBox.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+console.log("Searching:",value);
+
+});
+
+}
+
+//==============================
+// SIDEBAR ACTIVE LINK
+//==============================
+
+const links=document.querySelectorAll(".sidebar a");
+
+links.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+links.forEach(function(item){
+
+item.classList.remove("active");
+
+});
+
+this.classList.add("active");
+
+});
+
+});
+
+//==============================
+// DASHBOARD READY
+//==============================
+
+console.log("Apex Capital Dashboard Loaded Successfully");
+
+/*=========================================
+END OF SCRIPT.JS
+=========================================*/
