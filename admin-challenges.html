@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Admin Challenges |
+Apex Capital Admin
+
+</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<!--==================================
+SIDEBAR
+===================================-->
+
+<div class="sidebar">
+
+<div class="logo-box">
+
+<h1>APEX</h1>
+
+<span>ADMIN</span>
+
+</div>
+
+<a href="admin.html">
+
+📊 Dashboard
+
+</a>
+
+<a href="admin-traders.html">
+
+👥 Traders
+
+</a>
+
+<a class="active"
+href="admin-challenges.html">
+
+📈 Challenges
+
+</a>
+
+<a href="admin-payouts.html">
+
+💰 Payouts
+
+</a>
+
+<a href="admin-certificates.html">
+
+🏆 Certificates
+
+</a>
+
+<a href="admin-settings.html">
+
+⚙️ Settings
+
+</a>
+
+<a href="dashboard.html">
+
+🌐 Trader Dashboard
+
+</a>
+
+<a href="login.html">
+
+🚪 Logout
+
+</a>
+
+</div>
+
+<!--==================================
+MAIN CONTENT
+===================================-->
+
+<div class="main-content">
+
+<nav class="topbar">
+
+<div class="welcome">
+
+<h1>
+
+Challenge Management
+
+</h1>
+
+<p>
+
+Create, edit and manage Apex Capital evaluation challenges.
+
+</p>
+
+</div>
+
+</nav>
+
+<!--==================================
+HEADER
+===================================-->
+
+<section class="hero-banner">
+
+<div>
+
+<h2>
+
+📈 Challenge Control Center
+
+</h2>
+
+<p>
+
+Manage pricing, profit targets and trading rules for every account size.
+
+</p>
+
+</div>
+
+<button class="primary-btn">
+
++ Create Challenge
+
+</button>
+
+</section>
+
+<!--==================================
+OVERVIEW
+===================================-->
+
+<section class="overview-grid">
+
+<div class="overview-card">
+
+<h4>
+
+📦 Active Challenges
+
+</h4>
+
+<h2>
+
+6
+
+</h2>
+
+<p>
+
+Currently Available
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+👥 Active Traders
+
+</h4>
+
+<h2>
+
+832
+
+</h2>
+
+<p>
+
+Running Challenges
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+💰 Monthly Sales
+
+</h4>
+
+<h2>
+
+$82,450
+
+</h2>
+
+<p>
+
+Challenge Revenue
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+⭐ Most Popular
+
+</h4>
+
+<h2>
+
+$100K
+
+</h2>
+
+<p>
+
+Top Selling Account
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+CHALLENGE TABLE
+===================================-->
+
+<section class="activity-panel">
+
+<h2>
+
+📋 Challenge Packages
+
+</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>Account</th>
+
+<th>Price</th>
+
+<th>Target</th>
+
+<th>Max Loss</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>$5K</td>
+
+<td>$69</td>
+
+<td>8%</td>
+
+<td>10%</td>
+
+<td class="profit">
+
+Active
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Edit
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>$10K</td>
+
+<td>$129</td>
+
+<td>8%</td>
+
+<td>10%</td>
+
+<td class="profit">
+
+Active
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Edit
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>$25K</td>
+
+<td>$199</td>
+
+<td>8%</td>
+
+<td>10%</td>
+
+<td class="profit">
+
+Active
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Edit
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>$50K</td>
+
+<td>$299</td>
+
+<td>8%</td>
+
+<td>10%</td>
+
+<td class="profit">
+
+Active
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Edit
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>$100K</td>
+
+<td>$599</td>
+
+<td>8%</td>
+
+<td>10%</td>
+
+<td class="profit">
+
+Active
+
+</td>
+
+<td>
+
+<button class="primary-btn">
+
+Edit
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!--==================================
+CHALLENGE ACTIONS
+===================================-->
+
+<section class="quick-actions">
+
+<h2>
+
+⚡ Challenge Management
+
+</h2>
+
+<div class="action-grid">
+
+<div class="action-card">
+
+<h3>
+
+➕ Create Challenge
+
+</h3>
+
+<p>
+
+Add a new funding challenge package.
+
+</p>
+
+<button class="primary-btn">
+
+Create
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+✏ Edit Challenge
+
+</h3>
+
+<p>
+
+Update pricing and trading objectives.
+
+</p>
+
+<button class="primary-btn">
+
+Edit
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+🟢 Enable / Disable
+
+</h3>
+
+<p>
+
+Show or hide challenge packages.
+
+</p>
+
+<button class="primary-btn">
+
+Manage
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+📊 View Statistics
+
+</h3>
+
+<p>
+
+Review challenge sales and performance.
+
+</p>
+
+<button class="primary-btn">
+
+View
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+CHALLENGE PERFORMANCE
+===================================-->
+
+<section class="dashboard-row">
+
+<div class="activity-panel">
+
+<h2>
+
+📈 Challenge Performance
+
+</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>Challenge</th>
+
+<th>Sold</th>
+
+<th>Passed</th>
+
+<th>Funded</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>$5K</td>
+
+<td>326</td>
+
+<td>94</td>
+
+<td>41</td>
+
+</tr>
+
+<tr>
+
+<td>$10K</td>
+
+<td>287</td>
+
+<td>81</td>
+
+<td>36</td>
+
+</tr>
+
+<tr>
+
+<td>$25K</td>
+
+<td>211</td>
+
+<td>62</td>
+
+<td>28</td>
+
+</tr>
+
+<tr>
+
+<td>$50K</td>
+
+<td>152</td>
+
+<td>40</td>
+
+<td>19</td>
+
+</tr>
+
+<tr>
+
+<td>$100K</td>
+
+<td>272</td>
+
+<td>79</td>
+
+<td>39</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="announcement-panel">
+
+<h2>
+
+📢 Challenge Notes
+
+</h2>
+
+<div class="announcement-card">
+
+<h4>
+
+🔥 Best Seller
+
+</h4>
+
+<p>
+
+The $100K Challenge is currently the most purchased package.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+📈 Highest Pass Rate
+
+</h4>
+
+<p>
+
+The $5K Challenge has the highest completion rate.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+💰 Monthly Revenue
+
+</h4>
+
+<p>
+
+Challenge sales generated $82,450 this month.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+FOOTER
+===================================-->
+
+<footer class="dashboard-footer">
+
+<div>
+
+<h3>
+
+APEX CAPITAL ADMIN
+
+</h3>
+
+<p>
+
+Challenge Management System
+
+</p>
+
+</div>
+
+<div>
+
+<p>
+
+© 2026 Apex Capital
+
+</p>
+
+<p>
+
+Create • Manage • Scale
+
+</p>
+
+</div>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
