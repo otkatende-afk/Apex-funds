@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Admin Payouts |
+Apex Capital Admin
+
+</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<!--==================================
+SIDEBAR
+===================================-->
+
+<div class="sidebar">
+
+<div class="logo-box">
+
+<h1>APEX</h1>
+
+<span>ADMIN</span>
+
+</div>
+
+<a href="admin.html">
+
+📊 Dashboard
+
+</a>
+
+<a href="admin-traders.html">
+
+👥 Traders
+
+</a>
+
+<a href="admin-challenges.html">
+
+📈 Challenges
+
+</a>
+
+<a class="active"
+href="admin-payouts.html">
+
+💰 Payouts
+
+</a>
+
+<a href="admin-certificates.html">
+
+🏆 Certificates
+
+</a>
+
+<a href="admin-settings.html">
+
+⚙️ Settings
+
+</a>
+
+<a href="dashboard.html">
+
+🌐 Trader Dashboard
+
+</a>
+
+<a href="login.html">
+
+🚪 Logout
+
+</a>
+
+</div>
+
+<!--==================================
+MAIN CONTENT
+===================================-->
+
+<div class="main-content">
+
+<nav class="topbar">
+
+<div class="welcome">
+
+<h1>
+
+Payout Management
+
+</h1>
+
+<p>
+
+Review, approve and reject trader payout requests.
+
+</p>
+
+</div>
+
+</nav>
+
+<!--==================================
+HEADER
+===================================-->
+
+<section class="hero-banner">
+
+<div>
+
+<h2>
+
+💰 Payout Control Center
+
+</h2>
+
+<p>
+
+Manage every payout request submitted by traders.
+
+</p>
+
+</div>
+
+<button class="primary-btn">
+
+Export Report
+
+</button>
+
+</section>
+
+<!--==================================
+OVERVIEW
+===================================-->
+
+<section class="overview-grid">
+
+<div class="overview-card">
+
+<h4>
+
+💵 Pending
+
+</h4>
+
+<h2>
+
+18
+
+</h2>
+
+<p>
+
+Awaiting Approval
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+✅ Approved
+
+</h4>
+
+<h2>
+
+246
+
+</h2>
+
+<p>
+
+This Month
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+❌ Rejected
+
+</h4>
+
+<h2>
+
+5
+
+</h2>
+
+<p>
+
+This Month
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<h4>
+
+💰 Total Paid
+
+</h4>
+
+<h2>
+
+$148,920
+
+</h2>
+
+<p>
+
+Current Month
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+PAYOUT TABLE
+===================================-->
+
+<section class="activity-panel">
+
+<h2>
+
+📋 Pending Payout Requests
+
+</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Trader</th>
+
+<th>Amount</th>
+
+<th>Method</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>#P001</td>
+
+<td>James</td>
+
+<td>$2,450</td>
+
+<td>Crypto</td>
+
+<td>Pending</td>
+
+<td>
+
+<button class="primary-btn">
+
+Approve
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#P002</td>
+
+<td>Michael</td>
+
+<td>$980</td>
+
+<td>Bank</td>
+
+<td>Pending</td>
+
+<td>
+
+<button class="primary-btn">
+
+Approve
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#P003</td>
+
+<td>Sarah</td>
+
+<td>$1,250</td>
+
+<td>Mobile Money</td>
+
+<td>Pending</td>
+
+<td>
+
+<button class="primary-btn">
+
+Approve
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!--==================================
+PAYOUT ACTIONS
+===================================-->
+
+<section class="quick-actions">
+
+<h2>
+
+⚡ Payout Actions
+
+</h2>
+
+<div class="action-grid">
+
+<div class="action-card">
+
+<h3>
+
+✅ Approve Payout
+
+</h3>
+
+<p>
+
+Approve selected trader payout requests.
+
+</p>
+
+<button class="primary-btn">
+
+Approve
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+❌ Reject Payout
+
+</h3>
+
+<p>
+
+Reject a payout request with a reason.
+
+</p>
+
+<button class="primary-btn">
+
+Reject
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+📄 Export Report
+
+</h3>
+
+<p>
+
+Download payout history as a report.
+
+</p>
+
+<button class="primary-btn">
+
+Export
+
+</button>
+
+</div>
+
+<div class="action-card">
+
+<h3>
+
+📧 Notify Trader
+
+</h3>
+
+<p>
+
+Send payout status by email.
+
+</p>
+
+<button class="primary-btn">
+
+Notify
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+RECENT PAYOUT HISTORY
+===================================-->
+
+<section class="dashboard-row">
+
+<div class="activity-panel">
+
+<h2>
+
+📜 Recent Payout History
+
+</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Trader</th>
+
+<th>Amount</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>22 Jul</td>
+
+<td>Michael</td>
+
+<td>$2,450</td>
+
+<td class="profit">
+
+Paid
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>21 Jul</td>
+
+<td>Sarah</td>
+
+<td>$980</td>
+
+<td class="profit">
+
+Paid
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>20 Jul</td>
+
+<td>David</td>
+
+<td>$1,120</td>
+
+<td>
+
+Rejected
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>19 Jul</td>
+
+<td>James</td>
+
+<td>$3,600</td>
+
+<td class="profit">
+
+Paid
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="announcement-panel">
+
+<h2>
+
+📢 Payout Summary
+
+</h2>
+
+<div class="announcement-card">
+
+<h4>
+
+💰 Total Paid This Month
+
+</h4>
+
+<p>
+
+$148,920 successfully paid to traders.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+⏳ Pending Requests
+
+</h4>
+
+<p>
+
+18 payout requests are awaiting approval.
+
+</p>
+
+</div>
+
+<div class="announcement-card">
+
+<h4>
+
+⚡ Average Processing Time
+
+</h4>
+
+<p>
+
+Less than 24 hours.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+FOOTER
+===================================-->
+
+<footer class="dashboard-footer">
+
+<div>
+
+<h3>
+
+APEX CAPITAL ADMIN
+
+</h3>
+
+<p>
+
+Payout Management System
+
+</p>
+
+</div>
+
+<div>
+
+<p>
+
+© 2026 Apex Capital
+
+</p>
+
+<p>
+
+Fast • Secure • Reliable
+
+</p>
+
+</div>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
