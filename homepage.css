@@ -395,3 +395,81 @@ transition:.3s;
 transform:scale(1.04);
 background:#f2c94c;
 }
+/*==================================
+HELP ME CHOOSE
+==================================*/
+
+.help-box{
+max-width:900px;
+margin:80px auto;
+padding:50px 30px;
+background:linear-gradient(135deg,#111,#1b1b1b);
+border:1px solid #2b2b2b;
+border-radius:25px;
+text-align:center;
+}
+
+.help-box h3{
+font-size:38px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.help-box p{
+font-size:18px;
+color:#cfcfcf;
+line-height:1.7;
+margin-bottom:35px;
+}
+
+.help-box button{
+padding:18px 45px;
+background:#d4af37;
+border:none;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.help-box button:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(212,175,55,.3);
+}
+
+/*==================================
+STATISTICS
+==================================*/
+
+.stats-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin:80px 0;
+}
+
+.stat-box{
+background:#111;
+padding:35px 20px;
+border-radius:20px;
+text-align:center;
+border:1px solid #222;
+transition:.3s;
+}
+
+.stat-box:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+}
+
+.stat-box h2{
+font-size:42px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.stat-box p{
+font-size:18px;
+color:#cccccc;
+}
