@@ -269,3 +269,129 @@ font-size:14px;
 overflow:hidden;
 }
    }
+/* ===========================
+MARKET TICKER
+=========================== */
+
+.ticker{
+background:#111;
+border-top:1px solid #222;
+border-bottom:1px solid #222;
+overflow:hidden;
+white-space:nowrap;
+padding:15px 0;
+}
+
+.ticker-track{
+display:inline-block;
+animation:tickerMove 20s linear infinite;
+}
+
+.ticker span{
+display:inline-block;
+margin-right:50px;
+font-weight:bold;
+color:#00ff88;
+font-size:16px;
+}
+
+@keyframes tickerMove{
+
+0%{
+transform:translateX(100%);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
+}
+
+/* ===========================
+SECTION TITLE
+=========================== */
+
+.section{
+text-align:center;
+}
+
+.section h2{
+font-size:42px;
+margin-bottom:15px;
+color:#d4af37;
+}
+
+.section>p{
+color:#bbbbbb;
+margin-bottom:50px;
+font-size:18px;
+}
+
+/* ===========================
+CHALLENGE CARDS
+=========================== */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:20px;
+padding:30px;
+transition:.35s;
+text-align:left;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#d4af37;
+box-shadow:0 15px 35px rgba(212,175,55,.2);
+}
+
+.featured{
+border:2px solid #d4af37;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.card h4{
+font-size:34px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.card ul{
+list-style:none;
+margin-bottom:25px;
+}
+
+.card li{
+margin:12px 0;
+color:#dddddd;
+}
+
+.card button{
+width:100%;
+padding:15px;
+background:#d4af37;
+color:#111;
+border:none;
+border-radius:30px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.card button:hover{
+transform:scale(1.04);
+background:#f2c94c;
+}
