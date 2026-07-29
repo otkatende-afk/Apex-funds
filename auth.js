@@ -7,7 +7,7 @@ const SUPABASE_URL = "https://qfnbsxfqwizhbzyknsvz.supabase.co";
 const SUPABASE_KEY = "sb_publishable_50oc2WjubT5Rzx0Ct-LExw_hhziExmJ";
 
 // Connect to Supabase
-const supabase = window.supabase.createClient(
+const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
@@ -38,7 +38,7 @@ if (registerBtn) {
     }
 
     // Create authentication account
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await supabaseClient.auth.signUp({
       email: email,
       password: password
     });
