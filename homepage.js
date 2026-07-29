@@ -227,4 +227,14 @@ entry.target.style.transform="translateY(0)";
 
 });
 
-document.querySelectorAll(".
+document.querySelectorAll(".card,.stat-box,.help-box,.faq-item").forEach(function(item){
+
+item.style.opacity="0";
+item.style.transform="translateY(40px)";
+item.style.transition=".6s";
+
+observer.observe(item);
+
+});
+
+console.log("Apex Capital Homepage Loaded Successfully");
