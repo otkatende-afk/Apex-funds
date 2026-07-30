@@ -73,3 +73,38 @@ if (registerBtn) {
   });
 
 }
+// ===============================
+// LOGIN
+// ===============================
+
+const loginBtn = document.getElementById("loginBtn");
+
+if (loginBtn) {
+
+  loginBtn.addEventListener("click", async function () {
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please enter your email and password.");
+      return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert("Login successful!");
+
+    window.location.href = "dashboard.html";
+
+  });
+
+}
