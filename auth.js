@@ -51,7 +51,7 @@ if (registerBtn) {
     // Save trader profile
     if (data.user) {
 
-      const { error: dbError } = await supabase
+      const { error: dbError } = await supabaseClient
         .from("traders")
         .insert([{
           id: data.user.id,
