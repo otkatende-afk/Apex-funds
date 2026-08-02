@@ -1364,3 +1364,112 @@ color:#bdbdbd;
 font-size:17px;
 
 }
+/*==================================
+FEATURE HIGHLIGHTS
+==================================*/
+
+.features-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin:70px 0;
+
+}
+
+.feature-card{
+
+background:#151515;
+
+padding:30px;
+
+border-radius:18px;
+
+border:1px solid #2d2d2d;
+
+transition:.35s;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#d4af37;
+
+box-shadow:0 0 30px rgba(212,175,55,.25);
+
+}
+
+.feature-icon{
+
+font-size:45px;
+
+margin-bottom:20px;
+
+}
+
+.feature-card h3{
+
+font-size:24px;
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+color:#c5c5c5;
+
+line-height:1.8;
+
+}
+
+/*==================================
+GUARANTEE BANNER
+==================================*/
+
+.guarantee-banner{
+
+margin:70px 0;
+
+padding:35px;
+
+background:linear-gradient(135deg,#181818,#242424);
+
+border:1px solid #333;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+.guarantee-banner h2{
+
+font-size:34px;
+
+color:#d4af37;
+
+margin-bottom:20px;
+
+}
+
+.guarantee-banner p{
+
+font-size:18px;
+
+color:#d5d5d5;
+
+line-height:1.8;
+
+max-width:900px;
+
+margin:auto;
+
+}
