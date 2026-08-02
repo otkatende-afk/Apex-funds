@@ -1554,3 +1554,134 @@ color:#d4af37;
 font-size:18px;
 
   }
+/*==================================
+FAQ SECTION
+==================================*/
+
+.faq-section{
+
+margin:80px 0;
+
+}
+
+.faq-section h2{
+
+text-align:center;
+
+font-size:38px;
+
+margin-bottom:40px;
+
+color:#d4af37;
+
+}
+
+.faq-item{
+
+background:#151515;
+
+border:1px solid #2d2d2d;
+
+border-radius:15px;
+
+margin-bottom:20px;
+
+padding:25px;
+
+transition:.3s;
+
+}
+
+.faq-item:hover{
+
+border-color:#d4af37;
+
+box-shadow:0 0 20px rgba(212,175,55,.20);
+
+}
+
+.faq-item h3{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+color:#ffffff;
+
+}
+
+.faq-item p{
+
+color:#cfcfcf;
+
+line-height:1.8;
+
+}
+
+.support-banner{
+
+margin-top:70px;
+
+padding:45px;
+
+background:linear-gradient(135deg,#1a1a1a,#101010);
+
+border:1px solid #333;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+.support-banner h2{
+
+font-size:36px;
+
+color:#d4af37;
+
+margin-bottom:20px;
+
+}
+
+.support-banner p{
+
+color:#d0d0d0;
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+}
+
+.support-btn{
+
+display:inline-block;
+
+padding:18px 40px;
+
+background:#d4af37;
+
+color:#111;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.support-btn:hover{
+
+background:#f5c842;
+
+transform:translateY(-4px);
+
+box-shadow:0 0 25px rgba(212,175,55,.35);
+
+}
