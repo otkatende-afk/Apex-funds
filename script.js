@@ -7,10 +7,14 @@ SCRIPT.JS - PART 1
 // TRADER INFORMATION
 //==============================
 
-const trader = {
+const SUPABASE_URL = "https://qfnbsxfqwizhbzyknsvz.supabase.co";
 
-name: "James",
+const SUPABASE_KEY = "sb_publishable_50oc2WjubT5Rzx0Ct-LExw_hhziExmJ";
 
+const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 accountSize: 100000,
 
 balance: 100000,
@@ -43,10 +47,26 @@ rewardDays: 14
 // LOAD DASHBOARD
 //==============================
 
-window.onload = function(){
+window.onload = async function () {
 
-loadDashboard();
+    const { data } = await supabase.auth.getUser();
 
+    if (!data.user) {
+        window.location.href = "login.html";
+        return;
+    }
+
+    const { data: traderData } = await supabase
+        .from("traders")
+        .select("*")
+        .eq("id", data.user.id)
+        .single();
+
+    if (traderData) {
+        trader.name = traderData.full_name;
+    }
+
+    loadDashboard();
 };
 
 //==============================
