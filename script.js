@@ -1,96 +1,156 @@
 /*=========================================
 APEX CAPITAL
-SCRIPT.JS - PART 1
+SCRIPT.JS
+PART 1
 =========================================*/
 
 //==============================
-// TRADER INFORMATION
+// SUPABASE
 //==============================
 
-const SUPABASE_URL = "https://qfnbsxfqwizhbzyknsvz.supabase.co";
+const SUPABASE_URL =
+"https://qfnbsxfqwizhbzyknsvz.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_50oc2WjubT5Rzx0Ct-LExw_hhziExmJ";
+const SUPABASE_KEY =
+"sb_publishable_50oc2WjubT5Rzx0Ct-LExw_hhziExmJ";
 
-const supabase = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
+const supabase =
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
 );
-accountSize: 100000,
 
-balance: 100000,
+//==============================
+// TRADER OBJECT
+//==============================
 
-equity: 100000,
+const trader={
 
-profit: 0,
+name:"",
 
-phase: "Phase 1",
+email:"",
 
-status: "ACTIVE",
+accountSize:100000,
 
-challenge: "$100K Evaluation",
+balance:100000,
 
-profitTarget: 8,
+equity:100000,
 
-dailyLoss: 5,
+profit:0,
 
-maxLoss: 10,
+phase:"Phase 1",
 
-tradingDays: 0,
+status:"ACTIVE",
 
-minimumDays: 5,
+challenge:"$100K Evaluation",
 
-rewardDays: 14
+profitTarget:8,
+
+dailyLoss:5,
+
+maxLoss:10,
+
+tradingDays:0,
+
+minimumDays:5,
+
+rewardDays:14
 
 };
 
+//==============================
+// START DASHBOARD
+//==============================
+
+window.onload=function(){
+
+startDashboard();
+
+};
+
+//==============================
+// LOAD USER
+//==============================
+
+async function startDashboard(){
+
+const {data:{user}}=
+await supabase.auth.getUser();
+
+if(!user){
+
+window.location.href="login.html";
+
+return;
+
+}
+
+const {data,error}=await supabase
+
+.from("traders")
+
+.select("*")
+
+.eq("id",user.id)
+
+.single();
+
+if(error){
+
+console.log(error);
+
+return;
+
+}
+
+trader.name=data.full_name;
+
+trader.email=data.email;
+
+loadDashboard();
+
+}
 //==============================
 // LOAD DASHBOARD
-//==============================
-
-window.onload = async function () {
-
-    const { data } = await supabase.auth.getUser();
-
-    if (!data.user) {
-        window.location.href = "login.html";
-        return;
-    }
-
-    const { data: traderData } = await supabase
-        .from("traders")
-        .select("*")
-        .eq("id", data.user.id)
-        .single();
-
-    if (traderData) {
-        trader.name = traderData.full_name;
-    }
-
-    loadDashboard();
-};
-
-//==============================
-// UPDATE DASHBOARD
 //==============================
 
 function loadDashboard(){
 
 setText("welcome-name",trader.name);
 
-setText("dashboard-balance",
-"$"+number(trader.balance));
+setText(
+"dashboard-balance",
+"$"+number(trader.balance)
+);
 
-setText("dashboard-equity",
-"$"+number(trader.equity));
+setText(
+"dashboard-equity",
+"$"+number(trader.equity)
+);
 
-setText("dashboard-profit",
-profitText());
+setText(
+"dashboard-profit",
+profitText()
+);
 
-setText("challenge-type",
-trader.challenge);
+setText(
+"challenge-type",
+trader.challenge
+);
 
-setText("account-status",
-trader.status);
+setText(
+"account-status",
+trader.status
+);
+
+const avatar=document.getElementById("avatar");
+
+if(avatar && trader.name!=""){
+
+avatar.innerHTML=
+trader.name.charAt(0).toUpperCase();
+
+}
 
 }
 
@@ -112,7 +172,7 @@ element.innerHTML=value;
 
 function number(value){
 
-return value.toLocaleString();
+return Number(value).toLocaleString();
 
 }
 
@@ -124,7 +184,8 @@ return "+$"+number(trader.profit);
 
 }
 
-return "-$"+number(Math.abs(trader.profit));
+return "-$"+
+number(Math.abs(trader.profit));
 
 }
 
@@ -139,132 +200,27 @@ alert(message);
 }
 
 //==============================
-// QUICK ACTION BUTTONS
-//==============================
-
-function startChallenge(){
-
-window.location.href="challenges.html";
-
-}
-
-function requestReward(){
-
-window.location.href="rewards.html";
-
-}
-
-function openCertificates(){
-
-window.location.href="certificates.html";
-
-}
-
-function manageProfile(){
-
-window.location.href="profile.html";
-
-}
-
-//==============================
-// BUTTON EVENTS
-//==============================
-
-document.addEventListener("DOMContentLoaded",function(){
-
-const primaryButton=document.querySelector(".primary-btn");
-
-if(primaryButton){
-
-primaryButton.addEventListener("click",function(){
-
-requestReward();
-
-});
-
-}
-
-const actionButtons=document.querySelectorAll(".action-btn");
-
-actionButtons.forEach(function(button){
-
-const text=button.textContent.toLowerCase();
-
-if(text.includes("challenge")){
-
-button.addEventListener("click",function(e){
-
-e.preventDefault();
-
-startChallenge();
-
-});
-
-}
-
-if(text.includes("reward")){
-
-button.addEventListener("click",function(e){
-
-e.preventDefault();
-
-requestReward();
-
-});
-
-}
-
-if(text.includes("certificate")){
-
-button.addEventListener("click",function(e){
-
-e.preventDefault();
-
-openCertificates();
-
-});
-
-}
-
-if(text.includes("profile")){
-
-button.addEventListener("click",function(e){
-
-e.preventDefault();
-
-manageProfile();
-
-});
-
-}
-
-});
-
-});
-
-//==============================
-// SIMULATE ACCOUNT UPDATES
+// UPDATE PROFIT
 //==============================
 
 function updateProfit(amount){
 
 trader.profit=amount;
 
-trader.equity=trader.balance+amount;
+trader.equity=
+trader.balance+amount;
 
-setText("dashboard-profit",profitText());
+setText(
+"dashboard-profit",
+profitText()
+);
 
-setText("dashboard-equity",
-"$"+number(trader.equity));
+setText(
+"dashboard-equity",
+"$"+number(trader.equity)
+);
 
 }
-
-setTimeout(function(){
-
-updateProfit(2450);
-
-},2000);
-
 //==============================
 // PROGRESS BAR
 //==============================
@@ -325,7 +281,9 @@ const clock=document.getElementById("live-date");
 
 if(clock){
 
-clock.innerHTML=now.toLocaleString("en-UG",options);
+clock.innerHTML=
+
+now.toLocaleString("en-UG",options);
 
 }
 
@@ -345,14 +303,55 @@ if(searchBox){
 
 searchBox.addEventListener("keyup",function(){
 
-const value=this.value.toLowerCase();
-
-console.log("Searching:",value);
+console.log("Searching:",this.value);
 
 });
 
 }
 
+//==============================
+// QUICK ACTIONS
+//==============================
+
+function startChallenge(){
+
+window.location.href="challenges.html";
+
+}
+
+function requestReward(){
+
+window.location.href="rewards.html";
+
+}
+
+function openCertificates(){
+
+window.location.href="certificates.html";
+
+}
+
+function manageProfile(){
+
+window.location.href="profile.html";
+
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const primaryButton=document.querySelector(".primary-btn");
+
+if(primaryButton){
+
+primaryButton.addEventListener("click",function(){
+
+requestReward();
+
+});
+
+}
+
+});
 //==============================
 // SIDEBAR ACTIVE LINK
 //==============================
@@ -376,11 +375,45 @@ this.classList.add("active");
 });
 
 //==============================
+// LOGOUT
+//==============================
+
+async function logout(){
+
+await supabase.auth.signOut();
+
+window.location.href="login.html";
+
+}
+
+const logoutLink=document.querySelector(
+'a[href="login.html"]'
+);
+
+if(logoutLink){
+
+logoutLink.addEventListener("click",async function(e){
+
+e.preventDefault();
+
+await logout();
+
+});
+
+}
+
+//==============================
+// SIMULATE PROFIT
+//==============================
+
+setTimeout(function(){
+
+updateProfit(2450);
+
+},2000);
+
+//==============================
 // DASHBOARD READY
 //==============================
 
 console.log("Apex Capital Dashboard Loaded Successfully");
-
-/*=========================================
-END OF SCRIPT.JS
-=========================================*/
