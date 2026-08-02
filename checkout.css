@@ -687,3 +687,621 @@ font-weight:bold;
 letter-spacing:1px;
 
 }
+/*==================================
+PREMIUM NAVIGATION
+==================================*/
+
+nav{
+
+backdrop-filter:blur(15px);
+
+box-shadow:0 5px 20px rgba(0,0,0,.45);
+
+}
+
+.logo{
+
+transition:.3s;
+
+}
+
+.logo:hover{
+
+transform:scale(1.05);
+
+color:#ffd700;
+
+}
+
+.nav-links a{
+
+position:relative;
+
+padding-bottom:6px;
+
+}
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:0;
+
+width:0;
+height:2px;
+
+background:#d4af37;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+/*==================================
+SECTION TITLE
+==================================*/
+
+.section h1{
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#d4af37
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:20px;
+
+}
+
+.section>p{
+
+max-width:700px;
+
+margin:0 auto 50px;
+
+line-height:1.8;
+
+}
+
+/*==================================
+CARD PRICE
+==================================*/
+
+.card h1{
+
+display:flex;
+align-items:flex-start;
+
+}
+
+.card h1::before{
+
+content:"$";
+
+font-size:24px;
+
+margin-right:3px;
+
+margin-top:8px;
+
+}
+
+/*==================================
+SELECT BUTTON
+==================================*/
+
+.card button{
+
+letter-spacing:.5px;
+
+}
+
+.card button:active{
+
+transform:scale(.97);
+
+}
+
+/*==================================
+SUMMARY TOTAL
+==================================*/
+
+.summary-box h3{
+
+padding-top:10px;
+
+border-top:2px solid #2d2d2d;
+
+}
+
+/*==================================
+COUPON BOX
+==================================*/
+
+.summary-box input::placeholder{
+
+color:#777;
+
+}
+
+/*==================================
+SCROLLBAR
+==================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#d4af37;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#f5c842;
+
+}
+/*==================================
+TRUST SECTION
+==================================*/
+
+.trust-section{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+
+margin-top:70px;
+margin-bottom:70px;
+
+}
+
+.trust-card{
+
+background:#151515;
+
+padding:30px;
+
+border-radius:18px;
+
+border:1px solid #2d2d2d;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.trust-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#d4af37;
+
+box-shadow:0 0 30px rgba(212,175,55,.25);
+
+}
+
+.trust-card h2{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.trust-card h3{
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+font-size:22px;
+
+}
+
+.trust-card p{
+
+color:#bdbdbd;
+
+line-height:1.7;
+
+}
+
+/*==================================
+PAYMENT SECURITY
+==================================*/
+
+.payment-security{
+
+background:#111;
+
+border:1px solid #2b2b2b;
+
+border-radius:20px;
+
+padding:40px;
+
+margin-top:60px;
+
+text-align:center;
+
+}
+
+.payment-security h2{
+
+color:#d4af37;
+
+font-size:34px;
+
+margin-bottom:20px;
+
+}
+
+.payment-security p{
+
+color:#bdbdbd;
+
+font-size:17px;
+
+margin-bottom:30px;
+
+line-height:1.8;
+
+}
+
+.payment-icons{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:18px;
+
+}
+
+.payment-icons span{
+
+background:#1c1c1c;
+
+padding:14px 22px;
+
+border-radius:12px;
+
+border:1px solid #333;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.payment-icons span:hover{
+
+background:#d4af37;
+
+color:#111;
+
+transform:translateY(-5px);
+
+}
+
+/*==================================
+GUARANTEE BOX
+==================================*/
+
+.guarantee{
+
+margin-top:60px;
+
+background:linear-gradient(135deg,#161616,#101010);
+
+padding:40px;
+
+border-radius:20px;
+
+border:1px solid #333;
+
+text-align:center;
+
+}
+
+.guarantee h2{
+
+font-size:34px;
+
+color:#d4af37;
+
+margin-bottom:20px;
+
+}
+
+.guarantee p{
+
+color:#d0d0d0;
+
+font-size:17px;
+
+line-height:1.8;
+
+max-width:850px;
+
+margin:auto;
+
+}
+
+/*==================================
+FOOTER
+==================================*/
+
+footer{
+
+margin-top:80px;
+
+padding:50px 8%;
+
+background:#111;
+
+border-top:1px solid #2b2b2b;
+
+text-align:center;
+
+}
+
+footer h2{
+
+font-size:34px;
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+color:#9f9f9f;
+
+line-height:1.8;
+
+}
+
+footer a{
+
+color:#d4af37;
+
+text-decoration:none;
+
+}
+
+footer a:hover{
+
+text-decoration:underline;
+
+}
+
+/*==================================
+EXTRA MOBILE IMPROVEMENTS
+==================================*/
+
+@media(max-width:600px){
+
+.payment-security{
+
+padding:25px;
+
+}
+
+.payment-security h2{
+
+font-size:26px;
+
+}
+
+.guarantee{
+
+padding:25px;
+
+}
+
+.guarantee h2{
+
+font-size:26px;
+
+}
+
+.payment-icons{
+
+flex-direction:column;
+
+}
+
+.payment-icons span{
+
+width:100%;
+
+}
+
+.trust-card{
+
+padding:22px;
+
+}
+
+  }
+/*==================================
+BACKGROUND EFFECTS
+==================================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-200px;
+right:-200px;
+
+width:500px;
+height:500px;
+
+background:rgba(212,175,55,.08);
+
+border-radius:50%;
+
+filter:blur(100px);
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+bottom:-250px;
+left:-250px;
+
+width:600px;
+height:600px;
+
+background:rgba(212,175,55,.05);
+
+border-radius:50%;
+
+filter:blur(120px);
+
+z-index:-1;
+
+}
+
+/*==================================
+HOVER GLOW
+==================================*/
+
+.card,
+.summary-box,
+.comparison table,
+.payment-security,
+.guarantee{
+
+transition:all .35s ease;
+
+}
+
+.summary-box:hover,
+.payment-security:hover,
+.guarantee:hover{
+
+box-shadow:0 0 35px rgba(212,175,55,.20);
+
+border-color:#d4af37;
+
+}
+
+/*==================================
+BUTTON EFFECTS
+==================================*/
+
+button{
+
+transition:all .3s ease;
+
+}
+
+button:hover{
+
+cursor:pointer;
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+/*==================================
+TABLE STYLING
+==================================*/
+
+.comparison tr:nth-child(even){
+
+background:#121212;
+
+}
+
+.comparison tr:nth-child(odd){
+
+background:#181818;
+
+}
+
+/*==================================
+LOADING ANIMATION
+==================================*/
+
+@keyframes pulseGlow{
+
+0%{
+
+box-shadow:0 0 0 rgba(212,175,55,0);
+
+}
+
+50%{
+
+box-shadow:0 0 25px rgba(212,175,55,.35);
+
+}
+
+100%{
+
+box-shadow:0 0 0 rgba(212,175,55,0);
+
+}
+
+}
+
+.pay-btn{
+
+animation:pulseGlow 2.5s infinite;
+
+}
+
+/*==================================
+SMOOTH SCROLL
+==================================*/
+
+html{
+
+scroll-behavior:smooth;
+
+  }
