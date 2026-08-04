@@ -47,7 +47,7 @@ Complete Your Payment
 
 <div class="payment-grid">
 
-<div class="method-card active">
+<div class="method-card active" onclick="showPayment('mtn', this)">
 
 <div class="method-icon">📱</div>
 
@@ -57,7 +57,7 @@ Complete Your Payment
 
 </div>
 
-<div class="method-card">
+<div class="method-card" onclick="showPayment('airtel', this)">
 
 <div class="method-icon">📱</div>
 
@@ -67,7 +67,7 @@ Complete Your Payment
 
 </div>
 
-<div class="method-card">
+<div class="method-card" onclick="showPayment('card', this)">
 
 <div class="method-icon">💳</div>
 
@@ -77,7 +77,7 @@ Complete Your Payment
 
 </div>
 
-<div class="method-card">
+<div class="method-card" onclick="showPayment('crypto', this)">
 
 <div class="method-icon">₿</div>
 
@@ -364,7 +364,7 @@ Pay Securely →
 </div>
 
 <script src="script.js"></script>
-
+<script src="payment.js"></script>
 </body>
 
 </html>
