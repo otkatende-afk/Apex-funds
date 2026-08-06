@@ -72,3 +72,20 @@ form.innerHTML=`
 }
 
 }
+// ===============================
+// PAY NOW
+// ===============================
+
+document.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("pay-now")){
+
+        alert("Payment gateway coming soon.");
+
+        // Later this will connect to Flutterwave or Pesapal
+
+        // window.location.href = "success.html";
+
+    }
+
+});
