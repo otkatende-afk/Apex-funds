@@ -1,8 +1,8 @@
-// ========================================
-// APEX CAPITAL - PAYMENT.JS
-// ========================================
+// ===============================
+// APEX CAPITAL PAYMENT SYSTEM
+// ===============================
 
-function showPayment(method, element) {
+function showPayment(method, selectedCard) {
 
     // Remove active class from all payment cards
     const cards = document.querySelectorAll(".method-card");
@@ -11,9 +11,9 @@ function showPayment(method, element) {
         card.classList.remove("active");
     });
 
-    // Make the clicked card active
-    if (element) {
-        element.classList.add("active");
+    // Highlight selected card
+    if (selectedCard) {
+        selectedCard.classList.add("active");
     }
 
     // Find payment form
@@ -24,210 +24,191 @@ function showPayment(method, element) {
         return;
     }
 
-    // Payment content
-    let title = "";
-    let description = "";
-    let formHTML = "";
-
+    // MTN
     if (method === "mtn") {
 
-        title = "MTN Mobile Money";
-
-        description = "Pay instantly using MTN Mobile Money.";
-
-        formHTML = `
+        paymentForm.innerHTML = `
             <h3>MTN Mobile Money</h3>
 
-            <p>Enter your MTN number to continue.</p>
+            <p>Pay instantly using MTN Mobile Money.</p>
 
+            <label>Phone Number</label>
             <input
                 type="tel"
-                id="mtn-number"
-                placeholder="07XXXXXXXX"
-                maxlength="10"
+                placeholder="077XXXXXXX"
+                id="mtn-phone"
             >
 
-            <button class="payment-submit"
-                onclick="processPayment('mtn')">
-                Continue with MTN
+            <label>Account Name</label>
+            <input
+                type="text"
+                placeholder="Your full name"
+                id="mtn-name"
+            >
+
+            <label>Email Address</label>
+            <input
+                type="email"
+                placeholder="your@email.com"
+                id="mtn-email"
+            >
+
+            <button class="pay-now-btn" onclick="processPayment('mtn')">
+                Pay $599 →
             </button>
         `;
 
+        return;
     }
 
-    else if (method === "airtel") {
+    // AIRTEL
+    if (method === "airtel") {
 
-        title = "Airtel Money";
-
-        description = "Fast and secure Airtel Money payment.";
-
-        formHTML = `
+        paymentForm.innerHTML = `
             <h3>Airtel Money</h3>
 
-            <p>Enter your Airtel number to continue.</p>
+            <p>Pay securely using Airtel Money.</p>
 
+            <label>Phone Number</label>
             <input
                 type="tel"
-                id="airtel-number"
-                placeholder="07XXXXXXXX"
-                maxlength="10"
+                placeholder="070XXXXXXX"
+                id="airtel-phone"
             >
 
-            <button class="payment-submit"
-                onclick="processPayment('airtel')">
-                Continue with Airtel
+            <label>Account Name</label>
+            <input
+                type="text"
+                placeholder="Your full name"
+                id="airtel-name"
+            >
+
+            <label>Email Address</label>
+            <input
+                type="email"
+                placeholder="your@email.com"
+                id="airtel-email"
+            >
+
+            <button class="pay-now-btn" onclick="processPayment('airtel')">
+                Pay $599 →
             </button>
         `;
 
+        return;
     }
 
-    else if (method === "card") {
+    // CARD
+    if (method === "card") {
 
-        title = "Visa / Mastercard";
-
-        description = "Pay securely using your bank card.";
-
-        formHTML = `
+        paymentForm.innerHTML = `
             <h3>Visa / Mastercard</h3>
 
-            <p>Enter your card details.</p>
+            <p>Pay securely using your debit or credit card.</p>
 
+            <label>Card Number</label>
             <input
                 type="text"
-                placeholder="Cardholder Name"
-            >
-
-            <input
-                type="text"
-                placeholder="Card Number"
+                placeholder="1234 5678 9012 3456"
                 maxlength="19"
             >
 
-            <div class="card-row">
+            <div class="payment-fields">
 
-                <input
-                    type="text"
-                    placeholder="MM/YY"
-                    maxlength="5"
-                >
+                <div>
+                    <label>Expiry Date</label>
+                    <input
+                        type="text"
+                        placeholder="MM/YY"
+                    >
+                </div>
 
-                <input
-                    type="password"
-                    placeholder="CVV"
-                    maxlength="4"
-                >
+                <div>
+                    <label>CVV</label>
+                    <input
+                        type="password"
+                        placeholder="123"
+                        maxlength="4"
+                    >
+                </div>
 
             </div>
 
-            <button class="payment-submit"
-                onclick="processPayment('card')">
-                Continue to Card Payment
+            <label>Cardholder Name</label>
+            <input
+                type="text"
+                placeholder="Name on card"
+            >
+
+            <button class="pay-now-btn" onclick="processPayment('card')">
+                Pay $599 →
             </button>
         `;
 
+        return;
     }
 
-    else if (method === "crypto") {
+    // CRYPTO
+    if (method === "crypto") {
 
-        title = "Crypto";
-
-        description = "Pay using Bitcoin, USDT or Ethereum.";
-
-        formHTML = `
+        paymentForm.innerHTML = `
             <h3>Crypto Payment</h3>
 
-            <p>Select your cryptocurrency.</p>
+            <p>Select your preferred cryptocurrency.</p>
 
             <select id="crypto-type">
 
-                <option value="bitcoin">
+                <option value="btc">
                     Bitcoin (BTC)
                 </option>
 
                 <option value="usdt">
-                    USDT
+                    Tether (USDT)
                 </option>
 
-                <option value="ethereum">
+                <option value="eth">
                     Ethereum (ETH)
                 </option>
 
             </select>
 
-            <button class="payment-submit"
-                onclick="processPayment('crypto')">
-                Continue with Crypto
+            <div class="crypto-info">
+
+                <h4>Payment Address</h4>
+
+                <p>
+                    Payment address will appear after you continue.
+                </p>
+
+            </div>
+
+            <button class="pay-now-btn" onclick="processPayment('crypto')">
+                Continue to Payment →
             </button>
         `;
 
+        return;
     }
-
-    paymentForm.innerHTML = formHTML;
 }
 
 
-// ========================================
-// PROCESS PAYMENT
-// ========================================
+// ===============================
+// PAYMENT BUTTON
+// ===============================
 
 function processPayment(method) {
 
-    if (method === "mtn") {
-
-        const number = document.getElementById("mtn-number");
-
-        if (!number || number.value.trim() === "") {
-
-            alert("Please enter your MTN Mobile Money number.");
-
-            return;
-        }
-
-        alert(
-            "MTN Mobile Money selected.\n\n" +
-            "Payment integration will be connected here."
-        );
-
-    }
-
-    else if (method === "airtel") {
-
-        const number = document.getElementById("airtel-number");
-
-        if (!number || number.value.trim() === "") {
-
-            alert("Please enter your Airtel Money number.");
-
-            return;
-        }
-
-        alert(
-            "Airtel Money selected.\n\n" +
-            "Payment integration will be connected here."
-        );
-
-    }
-
-    else if (method === "card") {
-
-        alert(
-            "Card payment selected.\n\n" +
-            "Payment gateway will be connected here."
-        );
-
-    }
-
-    else if (method === "crypto") {
-
-        const crypto = document.getElementById("crypto-type");
-
-        alert(
-            "Crypto selected: " +
-            crypto.value.toUpperCase() +
-            "\n\n" +
-            "Crypto payment gateway will be connected here."
-        );
-
-    }
+    alert(
+        "Payment method selected: " +
+        method.toUpperCase() +
+        "\n\nPayment processing will be connected next."
+    );
 
 }
+
+
+// ===============================
+// PAGE READY
+// ===============================
+
+console.log("Apex Capital Payment System Loaded");
