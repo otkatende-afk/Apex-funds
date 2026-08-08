@@ -1,123 +1,189 @@
-function showPayment(type, element){
+// =====================================
+// APEX CAPITAL PAYMENT.JS
+// =====================================
 
-document.querySelectorAll(".method-card").forEach(card=>{
-card.classList.remove("active");
-});
+// Change payment form when a method is selected
+function showPayment(type, element) {
 
-element.classList.add("active");
+    // Remove active from all payment cards
+    const cards = document.querySelectorAll(".method-card");
 
-const form=document.getElementById("payment-form");
+    cards.forEach(function(card) {
+        card.classList.remove("active");
+    });
 
-if(type==="mtn"){
+    // Make selected card active
+    if (element) {
+        element.classList.add("active");
+    }
 
-form.innerHTML=`
-<h3>MTN Mobile Money</h3>
+    const form = document.querySelector(".payment-form");
 
-<label>Phone Number</label>
-<input type="tel" placeholder="077XXXXXXXX">
+    if (!form) {
+        console.error("Payment form not found.");
+        return;
+    }
 
-<label>Account Name</label>
-<input type="text" placeholder="Full Name">
+    // MTN MOBILE MONEY
+    if (type === "mtn") {
 
-<button class="pay-now">Pay with MTN</button>
-`;
+        form.innerHTML = `
+            <h3>📱 MTN Mobile Money</h3>
+
+            <p>Enter your MTN number to continue.</p>
+
+            <label>MTN Phone Number</label>
+
+            <input
+                type="tel"
+                id="mtn-number"
+                placeholder="077XXXXXXXX"
+            >
+
+            <button class="pay-now" onclick="processPayment('mtn')">
+                Pay with MTN
+            </button>
+        `;
+    }
+
+
+    // AIRTEL MONEY
+    if (type === "airtel") {
+
+        form.innerHTML = `
+            <h3>📱 Airtel Money</h3>
+
+            <p>Enter your Airtel number to continue.</p>
+
+            <label>Airtel Phone Number</label>
+
+            <input
+                type="tel"
+                id="airtel-number"
+                placeholder="070XXXXXXXX"
+            >
+
+            <button class="pay-now" onclick="processPayment('airtel')">
+                Pay with Airtel
+            </button>
+        `;
+    }
+
+
+    // VISA / MASTERCARD
+    if (type === "card") {
+
+        form.innerHTML = `
+            <h3>💳 Visa / Mastercard</h3>
+
+            <p>Enter your card details.</p>
+
+            <label>Card Number</label>
+
+            <input
+                type="text"
+                id="card-number"
+                placeholder="1234 5678 9012 3456"
+            >
+
+            <label>Expiry Date</label>
+
+            <input
+                type="text"
+                id="card-expiry"
+                placeholder="MM/YY"
+            >
+
+            <label>CVV</label>
+
+            <input
+                type="password"
+                id="card-cvv"
+                placeholder="123"
+            >
+
+            <button class="pay-now" onclick="processPayment('card')">
+                Pay with Card
+            </button>
+        `;
+    }
+
+
+    // CRYPTO
+    if (type === "crypto") {
+
+        form.innerHTML = `
+            <h3>₿ Crypto Payment</h3>
+
+            <p>
+                Pay using Bitcoin, USDT or Ethereum.
+            </p>
+
+            <button
+                class="pay-now"
+                onclick="processPayment('crypto')"
+            >
+                Continue with Crypto
+            </button>
+        `;
+    }
 
 }
 
-if(type==="airtel"){
 
-form.innerHTML=`
-<h3>Airtel Money</h3>
+// =====================================
+// PROCESS PAYMENT
+// =====================================
 
-<label>Phone Number</label>
-<input type="tel" placeholder="070XXXXXXXX">
+function processPayment(method) {
 
-<label>Account Name</label>
-<input type="text" placeholder="Full Name">
+    console.log("Payment method:", method);
 
-<button class="pay-now">Pay with Airtel</button>
-`;
+    if (method === "mtn") {
 
-}
+        const number = document.getElementById("mtn-number");
 
-if(type==="card"){
-
-form.innerHTML=`
-<h3>Visa / Mastercard</h3>
-
-<label>Card Number</label>
-<input type="text" placeholder="1234 5678 9012 3456">
-
-<label>Expiry Date</label>
-<input type="text" placeholder="MM/YY">
-
-<label>CVV</label>
-<input type="password" placeholder="123">
-
-<button class="pay-now">Pay by Card</button>
-`;
-
-}
-
-if(type==="crypto"){
-
-form.innerHTML=`
-<h3>Crypto Payment</h3>
-
-<p>Send payment using Bitcoin, Ethereum or USDT.</p>
-
-<button class="pay-now">Continue</button>
-`;
-
-}
-
-}
-// ===============================
-// PAY NOW
-// ===============================
-
-document.addEventListener("click", function(e){
-
-    if(e.target.classList.contains("pay-now")){
-
-        alert("Payment gateway coming soon.");
-
-        // Later this will connect to Flutterwave or Pesapal
-
-        // window.location.href = "success.html";
+        if (!number || !number.value.trim()) {
+            alert("Please enter your MTN phone number.");
+            return;
+        }
 
     }
 
-});
-// =====================================
-// PAYMENT METHOD SELECTION
-// =====================================
 
-document.addEventListener("DOMContentLoaded", function () {
+    if (method === "airtel") {
 
-    const paymentMethods = document.querySelectorAll(".method-card");
+        const number = document.getElementById("airtel-number");
 
-    paymentMethods.forEach(function (card) {
+        if (!number || !number.value.trim()) {
+            alert("Please enter your Airtel phone number.");
+            return;
+        }
 
-        card.addEventListener("click", function () {
+    }
 
-            // Remove active from all cards
-            paymentMethods.forEach(function (item) {
-                item.classList.remove("active");
-            });
 
-            // Activate selected card
-            this.classList.add("active");
+    if (method === "card") {
 
-            // Get payment method name
-            const method = this.textContent.trim();
+        const card = document.getElementById("card-number");
+        const expiry = document.getElementById("card-expiry");
+        const cvv = document.getElementById("card-cvv");
 
-            console.log("Selected payment method:", method);
+        if (
+            !card.value.trim() ||
+            !expiry.value.trim() ||
+            !cvv.value.trim()
+        ) {
+            alert("Please complete your card details.");
+            return;
+        }
 
-            alert("You selected: " + method);
+    }
 
-        });
 
-    });
+    alert(
+        "Payment gateway is not connected yet.\n\n" +
+        "Selected method: " + method.toUpperCase()
+    );
 
-});
+}
