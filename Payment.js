@@ -89,3 +89,35 @@ document.addEventListener("click", function(e){
     }
 
 });
+// =====================================
+// PAYMENT METHOD SELECTION
+// =====================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const paymentMethods = document.querySelectorAll(".method-card");
+
+    paymentMethods.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            // Remove active from all cards
+            paymentMethods.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            // Activate selected card
+            this.classList.add("active");
+
+            // Get payment method name
+            const method = this.textContent.trim();
+
+            console.log("Selected payment method:", method);
+
+            alert("You selected: " + method);
+
+        });
+
+    });
+
+});
