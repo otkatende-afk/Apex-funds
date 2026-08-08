@@ -1,189 +1,233 @@
-// =====================================
-// APEX CAPITAL PAYMENT.JS
-// =====================================
+// ========================================
+// APEX CAPITAL - PAYMENT.JS
+// ========================================
 
-// Change payment form when a method is selected
-function showPayment(type, element) {
+function showPayment(method, element) {
 
-    // Remove active from all payment cards
+    // Remove active class from all payment cards
     const cards = document.querySelectorAll(".method-card");
 
     cards.forEach(function(card) {
         card.classList.remove("active");
     });
 
-    // Make selected card active
+    // Make the clicked card active
     if (element) {
         element.classList.add("active");
     }
 
-    const form = document.querySelector(".payment-form");
+    // Find payment form
+    const paymentForm = document.querySelector(".payment-form");
 
-    if (!form) {
-        console.error("Payment form not found.");
+    if (!paymentForm) {
+        console.log("Payment form not found");
         return;
     }
 
-    // MTN MOBILE MONEY
-    if (type === "mtn") {
+    // Payment content
+    let title = "";
+    let description = "";
+    let formHTML = "";
 
-        form.innerHTML = `
-            <h3>📱 MTN Mobile Money</h3>
+    if (method === "mtn") {
+
+        title = "MTN Mobile Money";
+
+        description = "Pay instantly using MTN Mobile Money.";
+
+        formHTML = `
+            <h3>MTN Mobile Money</h3>
 
             <p>Enter your MTN number to continue.</p>
-
-            <label>MTN Phone Number</label>
 
             <input
                 type="tel"
                 id="mtn-number"
-                placeholder="077XXXXXXXX"
+                placeholder="07XXXXXXXX"
+                maxlength="10"
             >
 
-            <button class="pay-now" onclick="processPayment('mtn')">
-                Pay with MTN
+            <button class="payment-submit"
+                onclick="processPayment('mtn')">
+                Continue with MTN
             </button>
         `;
+
     }
 
+    else if (method === "airtel") {
 
-    // AIRTEL MONEY
-    if (type === "airtel") {
+        title = "Airtel Money";
 
-        form.innerHTML = `
-            <h3>📱 Airtel Money</h3>
+        description = "Fast and secure Airtel Money payment.";
+
+        formHTML = `
+            <h3>Airtel Money</h3>
 
             <p>Enter your Airtel number to continue.</p>
-
-            <label>Airtel Phone Number</label>
 
             <input
                 type="tel"
                 id="airtel-number"
-                placeholder="070XXXXXXXX"
+                placeholder="07XXXXXXXX"
+                maxlength="10"
             >
 
-            <button class="pay-now" onclick="processPayment('airtel')">
-                Pay with Airtel
+            <button class="payment-submit"
+                onclick="processPayment('airtel')">
+                Continue with Airtel
             </button>
         `;
+
     }
 
+    else if (method === "card") {
 
-    // VISA / MASTERCARD
-    if (type === "card") {
+        title = "Visa / Mastercard";
 
-        form.innerHTML = `
-            <h3>💳 Visa / Mastercard</h3>
+        description = "Pay securely using your bank card.";
+
+        formHTML = `
+            <h3>Visa / Mastercard</h3>
 
             <p>Enter your card details.</p>
 
-            <label>Card Number</label>
+            <input
+                type="text"
+                placeholder="Cardholder Name"
+            >
 
             <input
                 type="text"
-                id="card-number"
-                placeholder="1234 5678 9012 3456"
+                placeholder="Card Number"
+                maxlength="19"
             >
 
-            <label>Expiry Date</label>
+            <div class="card-row">
 
-            <input
-                type="text"
-                id="card-expiry"
-                placeholder="MM/YY"
-            >
+                <input
+                    type="text"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                >
 
-            <label>CVV</label>
+                <input
+                    type="password"
+                    placeholder="CVV"
+                    maxlength="4"
+                >
 
-            <input
-                type="password"
-                id="card-cvv"
-                placeholder="123"
-            >
+            </div>
 
-            <button class="pay-now" onclick="processPayment('card')">
-                Pay with Card
+            <button class="payment-submit"
+                onclick="processPayment('card')">
+                Continue to Card Payment
             </button>
         `;
+
     }
 
+    else if (method === "crypto") {
 
-    // CRYPTO
-    if (type === "crypto") {
+        title = "Crypto";
 
-        form.innerHTML = `
-            <h3>₿ Crypto Payment</h3>
+        description = "Pay using Bitcoin, USDT or Ethereum.";
 
-            <p>
-                Pay using Bitcoin, USDT or Ethereum.
-            </p>
+        formHTML = `
+            <h3>Crypto Payment</h3>
 
-            <button
-                class="pay-now"
-                onclick="processPayment('crypto')"
-            >
+            <p>Select your cryptocurrency.</p>
+
+            <select id="crypto-type">
+
+                <option value="bitcoin">
+                    Bitcoin (BTC)
+                </option>
+
+                <option value="usdt">
+                    USDT
+                </option>
+
+                <option value="ethereum">
+                    Ethereum (ETH)
+                </option>
+
+            </select>
+
+            <button class="payment-submit"
+                onclick="processPayment('crypto')">
                 Continue with Crypto
             </button>
         `;
+
     }
 
+    paymentForm.innerHTML = formHTML;
 }
 
 
-// =====================================
+// ========================================
 // PROCESS PAYMENT
-// =====================================
+// ========================================
 
 function processPayment(method) {
-
-    console.log("Payment method:", method);
 
     if (method === "mtn") {
 
         const number = document.getElementById("mtn-number");
 
-        if (!number || !number.value.trim()) {
-            alert("Please enter your MTN phone number.");
+        if (!number || number.value.trim() === "") {
+
+            alert("Please enter your MTN Mobile Money number.");
+
             return;
         }
 
+        alert(
+            "MTN Mobile Money selected.\n\n" +
+            "Payment integration will be connected here."
+        );
+
     }
 
-
-    if (method === "airtel") {
+    else if (method === "airtel") {
 
         const number = document.getElementById("airtel-number");
 
-        if (!number || !number.value.trim()) {
-            alert("Please enter your Airtel phone number.");
+        if (!number || number.value.trim() === "") {
+
+            alert("Please enter your Airtel Money number.");
+
             return;
         }
 
-    }
-
-
-    if (method === "card") {
-
-        const card = document.getElementById("card-number");
-        const expiry = document.getElementById("card-expiry");
-        const cvv = document.getElementById("card-cvv");
-
-        if (
-            !card.value.trim() ||
-            !expiry.value.trim() ||
-            !cvv.value.trim()
-        ) {
-            alert("Please complete your card details.");
-            return;
-        }
+        alert(
+            "Airtel Money selected.\n\n" +
+            "Payment integration will be connected here."
+        );
 
     }
 
+    else if (method === "card") {
 
-    alert(
-        "Payment gateway is not connected yet.\n\n" +
-        "Selected method: " + method.toUpperCase()
-    );
+        alert(
+            "Card payment selected.\n\n" +
+            "Payment gateway will be connected here."
+        );
+
+    }
+
+    else if (method === "crypto") {
+
+        const crypto = document.getElementById("crypto-type");
+
+        alert(
+            "Crypto selected: " +
+            crypto.value.toUpperCase() +
+            "\n\n" +
+            "Crypto payment gateway will be connected here."
+        );
+
+    }
 
 }
